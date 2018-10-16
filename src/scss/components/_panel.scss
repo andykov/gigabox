@@ -1,0 +1,89 @@
+$panel-item-border: 1px solid $border !default;
+
+$panel-heading-background-color: $background !default;
+$panel-heading-color: $text-strong !default;
+$panel-heading-line-height: 1.25 !default;
+$panel-heading-padding: 0.5em 0.75em !default;
+$panel-heading-radius: $radius !default;
+$panel-heading-size: 1.25em !default;
+$panel-heading-weight: $weight-light !default;
+
+$panel-tab-border-bottom: 1px solid $border !default;
+$panel-tab-active-border-bottom-color: $link-active-border !default;
+$panel-tab-active-color: $link-active !default;
+
+$panel-list-item-color: $text !default;
+$panel-list-item-hover-color: $link !default;
+
+$panel-block-color: $text-strong !default;
+$panel-block-hover-background-color: $background !default;
+$panel-block-active-border-left-color: $link !default;
+$panel-block-active-color: $link-active !default;
+$panel-block-active-icon-color: $link !default;
+
+$panel-icon-color: $text-light !default;
+
+.cards {
+  box-shadow: 0 5px 32px 0 rgba(0,0,0,0.07);
+
+  @include mobile {
+    margin-left: -1.42857rem;
+    margin-right: -1.42857rem;
+  }
+
+  &.is-border-top {
+    border-top: 5px solid #FF8C00;
+  }
+
+  &.is-gapless .cards__item {
+    padding: 0 !important;
+  }
+
+  &__item {
+    display: block;
+    padding: 36px 50px;
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.08), inset 1px 0 0 0 rgba(0, 0, 0, 0.08);
+    font-size: $size-5;
+    line-height: (28 / 17);
+    height: 100%;
+
+    .box {
+      //margin: -36px -50px;
+      //padding: 0;
+      box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.08), inset 1px 0 0 0 rgba(0, 0, 0, 0.08);
+      border-radius: 0;
+
+      &:hover {
+        background-color: #FFFCF0;
+      }
+    }
+
+  }
+
+  li {
+    a {
+
+    }
+
+    & + li {
+      margin-top: 1.03em;
+    }
+  }
+
+  .column .cards__item .menu {
+    margin-left: -2.882em;
+    margin-right: -2.882em;
+  }
+
+  .menu {
+    font-size: $size-5;
+
+    li {
+      margin-top: 0;
+    }
+
+    a {
+      padding: 0.975em 2.941em;
+    }
+  }
+}
