@@ -29,5 +29,8 @@
     "postcss-inline-svg": "^3.1.1",
     "sass-convert": "^0.5.2",
     "sassdoc": "^2.5.0"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
   }
 }
