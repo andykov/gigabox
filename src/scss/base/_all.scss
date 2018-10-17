@@ -1,7 +1,12 @@
 @charset "utf-8";
 
+@import "fonts.scss";
 @import "minireset.scss";
-// @import "generic.scss";
+
 // @import "helpers.scss";
+
+body {
+    font-family: 'Gotham Pro';
+}
 
 
