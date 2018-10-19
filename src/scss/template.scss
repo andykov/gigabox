@@ -114,7 +114,29 @@ body {
     }
 }
 
+.section {
+    &--property {
+        position: relative;
+        padding: 6.8% 0;
+    }
+}
+
 .property {
+    
+    
+    svg {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        max-width: 758px;
+        max-height: 758px;
+        // width: 100%;
+        // height: 100%;
+    }
+
     &__img {
         text-align: center;
         position: relative;

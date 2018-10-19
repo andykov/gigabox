@@ -123,16 +123,18 @@
 
 .tippy-tooltip {
   position: relative;
-  color: white;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  color: black;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.2;
   padding: 0.3rem 0.6rem;
+  padding: 15px 16px 14px;
   max-width: 350px;
-  text-align: center;
   will-change: transform;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #333;
+  background-color: #fff;
+  box-shadow: 3px 3px 6px 0 rgba(63, 63, 63, 0.32);
 
   &[data-size='small'] {
     padding: 0.2rem 0.4rem;
@@ -207,6 +209,12 @@
   }
   &[data-state='hidden'] {
     opacity: 0;
+  }
+}
+
+.tippy-content {
+  b {
+    font-size: 18px;
   }
 }
 

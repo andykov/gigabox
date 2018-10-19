@@ -15,7 +15,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="js/libs/tippy.min.js"></script>
     <script>
+
+
+        var lineDrawing = anime({
+            targets: '.property svg circle',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1500,
+            delay: function(el, i) { return i * 250 },
+            direction: 'alternate',
+            loop: true
+        });
+
+        
+        tippy.setDefaults({
+            arrow: true,
+            arrowType: 'round',
+            duration: 200,
+            inertia: true
+        });
+        // tippy('.btn-tips', {
+        //     arrow: true,
+        //     arrowType: 'round',
+        //     duration: 200,
+        //     inertia: true
+        // });
+        // var btn = document.querySelector('.btn-tips');
+        // var tip = btn._tippy
+        // console.log(tip);
         $(document).ready(function(){
+            // tippy('.btn-tips', {
+            //     delay: 100,
+            //     arrow: true,
+            //     arrowType: 'round',
+            //     size: 'large',
+            //     duration: 500,
+            //     animation: 'scale'
+            // });
+            // tippy.setDefaults({
+            //     arrow: true,
+            //     arrowType: 'round',
+            //     duration: 20000
+            // });
             function cilinder() {
                 $('.cilinder-lines svg').attr('viewBox',"0 0 " + $('.cilinder-lines').width() + " " + $('.cilinder-lines').height());
                 
@@ -57,10 +98,10 @@
     </script>
 </head>
 <body>
-    <section class="section">
+    <section class="section section--property">
         <div class="container">
             <div class="property">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 758 758">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 758 758">
                         <g data-name="Слой 2">
                           <g fill="none" stroke="#ccc" stroke-miterlimit="10" stroke-width="3" data-name="Слой 1">
                             <circle cx="379" cy="379" r="280" opacity=".4"/>
@@ -78,12 +119,13 @@
                       </svg>
                 <div class="property__img">
                     <img src="img/content/gigabox.png" alt="">
-                    <button type="button" data-tippy="I'm a tooltip!" class="btn-tips btn-tips--blue pulse tips-1"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-2"></button>
+                    <button type="button" data-tippy="<b>Эффективная фильтрация</b></br>Весь входящий воздух проходит через карманный фильтр, что позволяет защитить оборудование от попадания пыли и влаги даже при очень сильном ветре" class="btn-tips btn-tips--blue pulse tips-1"></button>
+                    <button type="button" data-tippy="<b>Осевые вентиляторы 2 шт. общей мощностью в 250 000 м3/час</b></br>
+                    Полная замена воздуха происходит каждые 0,8 секунд. Что позволяет поддерживать низкую температура в очень жарком климате." class="btn-tips btn-tips--blue pulse tips-2"></button>
                     <button type="button" class="btn-tips btn-tips--blue pulse tips-3"></button>
                     <button type="button" class="btn-tips btn-tips--blue pulse tips-4"></button>
                     <button type="button" class="btn-tips btn-tips--blue pulse tips-5"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-6"></button>
+                    <button type="button" data-tippy="<b>Система видеонаблюдения</b></br>Позволяет видеть каждую часть контейнера и производить дистанционный осмотр оборудования." class="btn-tips btn-tips--blue pulse tips-6"></button>
                     <button type="button" class="btn-tips btn-tips--blue pulse tips-7"></button>
                     <button type="button" class="btn-tips btn-tips--blue pulse tips-8"></button>
                 </div>
