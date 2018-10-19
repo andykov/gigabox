@@ -5,6 +5,7 @@
 //
 
 .btn {
+  position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
   text-align: center;
@@ -12,8 +13,49 @@
   vertical-align: middle;
   user-select: none;
   border: $btn-border-width solid transparent;
+  overflow: hidden;
+  
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
+
+  padding: 4px 30px;
+  box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  z-index: 1;
+
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+    // width: 48px;
+    // height: 48px;
+    border-radius: 100%;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    transform: rotate(45deg);
+    background: rgba(18, 122, 203, 1) 0%;
+    width: 400px;
+    height: 400px;
+    top: -300%;
+    right: 43px;
+    z-index: -1;
+  }
+
+  &:before {
+    background: linear-gradient(0deg, rgba(18, 122, 203, 1) 0%, rgba(33, 146, 234, 1) 100%);
+  }
+
+  &:after {
+    background: url(img/btn_pattern.png) repeat;
+  }
 
   // Share hover and focus styles
   @include hover-focus {

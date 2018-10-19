@@ -58,17 +58,29 @@ body {
     border-radius: 6px;
 
     &__link {
-        display: block;
+        display: flex;
+        align-items: center;
         font-size: 18px;
         font-weight: 300;
         line-height: 1.2;
         color: #fff;
-        padding: 37.5px 0;
+        padding: 37.5px 15px;
 
         span {
             font-weight: 600;
             color: #00406B;
         }
+    }
+
+    &__icon {
+        max-width: 83px;
+        width: 100%;
+        text-align: center;
+        margin-right: 15px;
+    }
+
+    &__text {
+        
     }
 }
 
@@ -108,6 +120,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    z-index: 1;
 
     &__item {
         // position: relative;
@@ -134,6 +147,39 @@ body {
 
     &__step {
         padding: 0 24px;
+    }
+}
+
+.regions {
+    position: relative;
+    padding-top: 15%;
+    padding-bottom: 11%;
+
+    &__map {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    &__info {
+        max-width: 570px;
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        font-size: 14px;
+        font-weight: 300;
+        padding-left: 98px;
+        margin-top: 40px;
+    
+        // hyphens: auto;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: url(../img/svg/support.svg) no-repeat center center;
+            width: 98px;
+            height: 54px;
+        }
     }
 }
 

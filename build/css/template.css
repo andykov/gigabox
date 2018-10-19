@@ -31,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: "Gotham Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -56,10 +56,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Gotham Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #212529;
   text-align: left;
   background-color: #fff; }
@@ -175,7 +175,8 @@ figure {
 
 img {
   vertical-align: middle;
-  border-style: none; }
+  border-style: none;
+  max-width: 100%; }
 
 svg {
   overflow: hidden;
@@ -1707,11 +1708,11 @@ pre {
 .form-control {
   display: block;
   width: 100%;
-  height: -webkit-calc(2.25rem + 2px);
-  height: calc(2.25rem + 2px);
+  height: -webkit-calc(1.95rem + 2px);
+  height: calc(1.95rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #495057;
   background-color: #fff;
   -webkit-background-clip: padding-box;
@@ -1771,7 +1772,7 @@ select.form-control:focus::-ms-value {
   padding-bottom: calc(0.375rem + 1px);
   margin-bottom: 0;
   font-size: inherit;
-  line-height: 1.5; }
+  line-height: 1.2; }
 
 .col-form-label-lg {
   padding-top: -webkit-calc(0.5rem + 1px);
@@ -1795,7 +1796,7 @@ select.form-control:focus::-ms-value {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #212529;
   background-color: transparent;
   border: solid transparent;
@@ -1898,7 +1899,7 @@ textarea.form-control {
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #fff;
   background-color: rgba(40, 167, 69, 0.9);
   -webkit-border-radius: 0.25rem;
@@ -1984,7 +1985,7 @@ textarea.form-control {
   padding: 0.25rem 0.5rem;
   margin-top: .1rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #fff;
   background-color: rgba(220, 53, 69, 0.9);
   -webkit-border-radius: 0.25rem;
@@ -2146,6 +2147,7 @@ textarea.form-control {
       margin-bottom: 0; } }
 
 .btn {
+  position: relative;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -2156,21 +2158,56 @@ textarea.form-control {
       -ms-user-select: none;
           user-select: none;
   border: 1px solid transparent;
+  overflow: hidden;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.2;
   -webkit-border-radius: 0.25rem;
           border-radius: 0.25rem;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out; }
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  padding: 4px 30px;
+  -webkit-box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
+          box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  z-index: 1; }
   @media screen and (prefers-reduced-motion: reduce) {
     .btn {
       -webkit-transition: none;
       -o-transition: none;
       transition: none; } }
+  .btn .icon {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    line-height: 1;
+    text-align: center; }
+  .btn:before, .btn:after {
+    content: '';
+    position: absolute;
+    display: block;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background: #127acb 0%;
+    width: 400px;
+    height: 400px;
+    top: -300%;
+    right: 43px;
+    z-index: -1; }
+  .btn:before {
+    background: -webkit-gradient(linear, left bottom, left top, from(#127acb), to(#2192ea));
+    background: -webkit-linear-gradient(bottom, #127acb 0%, #2192ea 100%);
+    background: -o-linear-gradient(bottom, #127acb 0%, #2192ea 100%);
+    background: linear-gradient(0deg, #127acb 0%, #2192ea 100%); }
+  .btn:after {
+    background: url(img/btn_pattern.png) repeat; }
   .btn:hover, .btn:focus {
     text-decoration: none; }
   .btn:focus, .btn.focus {
@@ -3075,7 +3112,7 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #495057;
   text-align: center;
   white-space: nowrap;
@@ -3138,7 +3175,7 @@ input[type="button"].btn-block {
 .custom-control {
   position: relative;
   display: block;
-  min-height: 1.5rem;
+  min-height: 1.2rem;
   padding-left: 1.5rem; }
 
 .custom-control-inline {
@@ -3171,7 +3208,7 @@ input[type="button"].btn-block {
   margin-bottom: 0; }
   .custom-control-label::before {
     position: absolute;
-    top: 0.25rem;
+    top: 0.1rem;
     left: -1.5rem;
     display: block;
     width: 1rem;
@@ -3185,7 +3222,7 @@ input[type="button"].btn-block {
     background-color: #dee2e6; }
   .custom-control-label::after {
     position: absolute;
-    top: 0.25rem;
+    top: 0.1rem;
     left: -1.5rem;
     display: block;
     width: 1rem;
@@ -3234,10 +3271,10 @@ input[type="button"].btn-block {
 .custom-select {
   display: inline-block;
   width: 100%;
-  height: -webkit-calc(2.25rem + 2px);
-  height: calc(2.25rem + 2px);
+  height: -webkit-calc(1.95rem + 2px);
+  height: calc(1.95rem + 2px);
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #495057;
   vertical-align: middle;
   background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
@@ -3285,16 +3322,16 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: -webkit-calc(2.25rem + 2px);
-  height: calc(2.25rem + 2px);
+  height: -webkit-calc(1.95rem + 2px);
+  height: calc(1.95rem + 2px);
   margin-bottom: 0; }
 
 .custom-file-input {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: -webkit-calc(2.25rem + 2px);
-  height: calc(2.25rem + 2px);
+  height: -webkit-calc(1.95rem + 2px);
+  height: calc(1.95rem + 2px);
   margin: 0;
   opacity: 0; }
   .custom-file-input:focus ~ .custom-file-label {
@@ -3314,10 +3351,10 @@ input[type="button"].btn-block {
   right: 0;
   left: 0;
   z-index: 1;
-  height: -webkit-calc(2.25rem + 2px);
-  height: calc(2.25rem + 2px);
+  height: -webkit-calc(1.95rem + 2px);
+  height: calc(1.95rem + 2px);
   padding: 0.375rem 0.75rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;
@@ -3330,9 +3367,9 @@ input[type="button"].btn-block {
     bottom: 0;
     z-index: 3;
     display: block;
-    height: 2.25rem;
+    height: 1.95rem;
     padding: 0.375rem 0.75rem;
-    line-height: 1.5;
+    line-height: 1.2;
     color: #495057;
     content: "Browse";
     background-color: #e9ecef;
@@ -3589,8 +3626,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -4902,7 +4939,7 @@ button.close {
 
 .modal-title {
   margin-bottom: 0;
-  line-height: 1.5; }
+  line-height: 1.2; }
 
 .modal-body {
   position: relative;
@@ -4961,10 +4998,10 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Gotham Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.2;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -5047,10 +5084,10 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Gotham Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.2;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -7974,15 +8011,27 @@ body {
   -webkit-border-radius: 6px;
           border-radius: 6px; }
   .service__link {
-    display: block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.2;
     color: #fff;
-    padding: 37.5px 0; }
+    padding: 37.5px 15px; }
     .service__link span {
       font-weight: 600;
       color: #00406B; }
+  .service__icon {
+    max-width: 83px;
+    width: 100%;
+    text-align: center;
+    margin-right: 15px; }
 
 .business__advantage {
   background-color: #fff;
@@ -8027,7 +8076,8 @@ body {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  z-index: 1; }
   .how-work__item {
     display: -webkit-box;
     display: -webkit-flex;
@@ -8057,6 +8107,30 @@ body {
     width: 100%; }
   .how-work__step {
     padding: 0 24px; }
+
+.regions {
+  position: relative;
+  padding-top: 15%;
+  padding-bottom: 11%; }
+  .regions__map {
+    max-width: 980px;
+    margin: 0 auto; }
+  .regions__info {
+    max-width: 570px;
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 98px;
+    margin-top: 40px; }
+    .regions__info:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      background: url(../img/svg/support.svg) no-repeat center center;
+      width: 98px;
+      height: 54px; }
 
 .product__img {
   position: relative;

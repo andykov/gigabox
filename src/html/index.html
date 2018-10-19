@@ -16,7 +16,7 @@
         $(document).ready(function(){
             function cilinder() {
                 $('.cilinder-lines svg').attr('viewBox',"0 0 " + $('.cilinder-lines').width() + " " + $('.cilinder-lines').height());
-
+                
                 $('.how-work__item').each(function(i, e){
                     var cylinder = $(this).find('.cylinder');
                     var spanTop = cylinder.position().top;
@@ -24,10 +24,7 @@
                     var spanWidth = cylinder.width();
                     var spanHeight = cylinder.height();
 
-                    
-                    // console.log(spanTopNext);
-                    // console.log(spanLeftNext);
-                    // console.log('------');
+                        
                     if ($(this).next().length) {
                         var cylinderNext = $(this).next().find('.cylinder');
                         var spanTopNext = cylinderNext.position().top;
@@ -48,7 +45,7 @@
                     
                 });
             }
-            // cilinder();
+            cilinder();
 
             
             $(window).resize(function() {
@@ -75,6 +72,7 @@
                         </div>
                         <div class="product__request">
 							<a href="#" class="btn">
+                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
 								Получить консультацию
 							</a>
                         </div>
@@ -94,6 +92,7 @@
                         </div>
                         <div class="product__request">
 							<a href="#" class="btn">
+                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
 								Получить консультацию
 							</a>
                         </div>
@@ -113,7 +112,7 @@
                         </div>
                         <div class="product__request">
 							<a href="#" class="btn">
-								<span class="icon"><img src="img/pdf.svg" alt=""></span>
+								<span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
 								Получить консультацию
 							</a>
                         </div>
@@ -133,7 +132,7 @@
                         </div>
                         <div class="product__request">
 							<a href="#" class="btn">
-								<span class="icon"><img src="img/pdf.svg" alt=""></span>
+								<span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
 								Получить консультацию
 							</a>
                         </div>
@@ -146,43 +145,59 @@
         <div class="container">
             <div class="section__head">
                 <h2>Превратите расход в доход</h2>
-                <h3>Выгодные решения для бизнеса</h3>
+                <div class="h2">Выгодные решения для бизнеса</div>
                 <p>Получите еще больше пользы от майнинга — используйте выделяемое тепло для дополнительного заработка.</p>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="service">
                         <a href="#" class="service__link">
-                            <div class="service__icon"></div>
-                            Изготовления контейнера под отопление нижних нежилых помещений <br>
-                            <span>— доступно для заказа</span>
+                            <div class="service__icon">
+                                <img src="img/svg/icon_sol-1.svg" alt="">
+                            </div>
+                            <div class="service__text">
+                                Изготовления контейнера под отопление нижних нежилых помещений <br>
+                                <span>— доступно для заказа</span>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="service">
                         <a href="#" class="service__link">
-                            <div class="service__icon"></div>
-                            Изготовление контейнера для обогрева покрасочной камеры <br>
-                            <span>— доступно для заказа</span>
+                            <div class="service__icon">
+                                    <img src="img/svg/icon_sol-2.svg" alt="">
+                            </div>
+                            <div class="service__text">
+                                Изготовление контейнера для обогрева покрасочной камеры <br>
+                                <span>— доступно для заказа</span>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="service">
                         <a href="#" class="service__link">
-                            <div class="service__icon"></div>
-                            Изготовление контейнера для обогрева сушильной камеры для дерева <br>
-                            <span>— доступно для заказа</span>
+                            <div class="service__icon">
+                                    <img src="img/svg/icon_sol-3.svg" alt="">
+                            </div>
+                            <div class="service__text">
+                                Изготовление контейнера для обогрева сушильной камеры для дерева <br>
+                                <span>— доступно для заказа</span>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="service">
                         <a href="#" class="service__link">
-                            <div class="service__icon"></div>
-                            Изготовление контейнера для обогрева частного бассейна <br>
-                            <span>— доступно для заказа</span>
+                            <div class="service__icon">
+                                    <img src="img/svg/icon_sol-4.svg" alt="">
+                            </div>
+                            <div class="service__text">
+                                Изготовление контейнера для обогрева частного бассейна <br>
+                                <span>— доступно для заказа</span>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -217,7 +232,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--how-work">
+    <section class="section section--how-work bg">
         <div class="container">
             <div class="section__head">
                 <h2>Как мы работаем</h2>
@@ -225,7 +240,6 @@
             <div class="how-work">
                 <div class="cilinder-lines">
                     <svg class="logo" width="100%" height="100%" viewBox="0 0 500 448">
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
                         <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
                         <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
                         <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
@@ -322,6 +336,14 @@
                             <span></span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="regions">
+                <div class="regions__map">
+                    <img src="img/svg/map-all.svg" alt="">
+                </div>
+                <div class="regions__info">
+                    Вы можете связаться с нашими клиентами напрямую и убедиться в качестве нашей продукции. Для этого позвоните по специальному номеру: <a href="tel:+79819336482">8 (981) 933-64-82</a> и назовите свой город. Специалист проверит наличие клиентов и партнеров в Вашем городе, которые готовы показать свои дата-центры, и предоставит контакты для связи с ними.
                 </div>
             </div>
         </div>
