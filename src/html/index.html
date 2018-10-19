@@ -8,10 +8,12 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/libs/tippy/tippy.css">
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="js/libs/tippy.min.js"></script>
     <script>
         $(document).ready(function(){
             function cilinder() {
@@ -55,6 +57,40 @@
     </script>
 </head>
 <body>
+    <section class="section">
+        <div class="container">
+            <div class="property">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 758 758">
+                        <g data-name="Слой 2">
+                          <g fill="none" stroke="#ccc" stroke-miterlimit="10" stroke-width="3" data-name="Слой 1">
+                            <circle cx="379" cy="379" r="280" opacity=".4"/>
+                            <circle cx="379" cy="379" r="310" opacity=".3"/>
+                            <circle cx="379" cy="379" r="342.5" opacity=".2"/>
+                            <circle cx="379" cy="379" r="377.5" opacity=".1"/>
+                            <circle cx="379" cy="379" r="250" opacity=".5"/>
+                            <circle cx="379" cy="378" r="225" opacity=".6"/>
+                            <circle cx="379" cy="378" r="202.5" opacity=".7"/>
+                            <circle cx="379" cy="378" r="182.5" opacity=".8"/>
+                            <circle cx="379" cy="378" r="165" opacity=".9"/>
+                            <circle cx="379" cy="378" r="150"/>
+                          </g>
+                        </g>
+                      </svg>
+                <div class="property__img">
+                    <img src="img/content/gigabox.png" alt="">
+                    <button type="button" data-tippy="I'm a tooltip!" class="btn-tips btn-tips--blue pulse tips-1"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-2"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-3"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-4"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-5"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-6"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-7"></button>
+                    <button type="button" class="btn-tips btn-tips--blue pulse tips-8"></button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <section class="section section--product bg">
         <div class="container">
             <div class="row">

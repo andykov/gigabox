@@ -2157,24 +2157,34 @@ textarea.form-control {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   overflow: hidden;
+  min-height: 56px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.2;
   -webkit-border-radius: 0.25rem;
           border-radius: 0.25rem;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  padding: 4px 30px;
+  -webkit-transition: color 0.12s ease-in-out, background-color 0.12s ease-in-out, border-color 0.12s ease-in-out, -webkit-transform 0.12s ease-in-out, -webkit-box-shadow 0.12s ease-in-out;
+  transition: color 0.12s ease-in-out, background-color 0.12s ease-in-out, border-color 0.12s ease-in-out, -webkit-transform 0.12s ease-in-out, -webkit-box-shadow 0.12s ease-in-out;
+  -o-transition: color 0.12s ease-in-out, background-color 0.12s ease-in-out, border-color 0.12s ease-in-out, transform 0.12s ease-in-out, box-shadow 0.12s ease-in-out;
+  transition: color 0.12s ease-in-out, background-color 0.12s ease-in-out, border-color 0.12s ease-in-out, transform 0.12s ease-in-out, box-shadow 0.12s ease-in-out;
+  transition: color 0.12s ease-in-out, background-color 0.12s ease-in-out, border-color 0.12s ease-in-out, transform 0.12s ease-in-out, box-shadow 0.12s ease-in-out, -webkit-transform 0.12s ease-in-out, -webkit-box-shadow 0.12s ease-in-out;
+  padding: 8px 30px;
   -webkit-box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
           box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
+  text-transform: uppercase;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-box-shadow 0.14s, -webkit-transform 0.14s;
+  transition: -webkit-box-shadow 0.14s, -webkit-transform 0.14s;
+  -o-transition: box-shadow 0.14s, transform 0.14s;
+  transition: box-shadow 0.14s, transform 0.14s;
+  transition: box-shadow 0.14s, transform 0.14s, -webkit-box-shadow 0.14s, -webkit-transform 0.14s;
   z-index: 1; }
   @media screen and (prefers-reduced-motion: reduce) {
     .btn {
@@ -2209,7 +2219,12 @@ textarea.form-control {
   .btn:after {
     background: url(img/btn_pattern.png) repeat; }
   .btn:hover, .btn:focus {
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 0 rgba(0, 31, 81, 0.8);
+            box-shadow: 0 0 0 rgba(0, 31, 81, 0.8);
+    -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+            transform: translateY(4px); }
   .btn:focus, .btn.focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -2666,6 +2681,60 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
 
+.btn-tips {
+  position: relative;
+  border: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.58);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.58);
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  cursor: pointer; }
+  .btn-tips:after {
+    content: '';
+    display: block;
+    background: url(../img/svg/plus.svg) no-repeat center center;
+    margin: auto;
+    -webkit-background-size: 40% 40%;
+            background-size: 40%;
+    width: 100%;
+    height: 100%; }
+
+.btn-tips:before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+  border: 2px dashed #B3B3B3;
+  -webkit-border-radius: 100%;
+          border-radius: 100%; }
+
+.btn-tips--blue {
+  background: #127acb;
+  background: -webkit-linear-gradient(left, #127acb 0%, #2192ea 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#127acb), to(#2192ea));
+  background: -o-linear-gradient(left, #127acb 0%, #2192ea 100%);
+  background: linear-gradient(to right, #127acb 0%, #2192ea 100%); }
+
+.btn-tips--red {
+  background-color: #C1272D; }
+
+.btn-tips--middle {
+  width: 74px;
+  height: 74px; }
+
 .fade {
   -webkit-transition: opacity 0.15s linear;
   -o-transition: opacity 0.15s linear;
@@ -2901,7 +2970,7 @@ input[type="button"].btn-block {
   .btn-group-vertical .btn + .btn-group,
   .btn-group-vertical .btn-group + .btn,
   .btn-group-vertical .btn-group + .btn-group {
-    margin-left: -1px; }
+    margin-left: 0px; }
 
 .btn-toolbar {
   display: -webkit-box;
@@ -2974,7 +3043,7 @@ input[type="button"].btn-block {
   .btn-group-vertical > .btn + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
   .btn-group-vertical > .btn-group + .btn-group {
-    margin-top: -1px;
+    margin-top: 0px;
     margin-left: 0; }
   .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
   .btn-group-vertical > .btn-group:not(:last-child) > .btn {
@@ -8061,6 +8130,36 @@ body {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
+
+.property__img {
+  text-align: center;
+  position: relative; }
+  .property__img .btn-tips {
+    position: absolute; }
+    .property__img .btn-tips.tips-1 {
+      top: 55%;
+      left: 5%; }
+    .property__img .btn-tips.tips-2 {
+      left: 11%;
+      top: 32%; }
+    .property__img .btn-tips.tips-3 {
+      left: 35.9%;
+      top: 58%; }
+    .property__img .btn-tips.tips-4 {
+      left: 51%;
+      top: 30%; }
+    .property__img .btn-tips.tips-5 {
+      left: 71%;
+      top: 9%; }
+    .property__img .btn-tips.tips-6 {
+      top: 10%;
+      right: 9%; }
+    .property__img .btn-tips.tips-7 {
+      left: 72.4%;
+      top: 38%; }
+    .property__img .btn-tips.tips-8 {
+      left: 70.4%;
+      top: 59%; }
 
 .how-work {
   counter-reset: section;

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 758 758">
+  <g data-name="Слой 2">
+    <g fill="none" stroke="#ccc" stroke-miterlimit="10" stroke-width="3" data-name="Слой 1">
+      <circle cx="379" cy="379" r="280" opacity=".4"/>
+      <circle cx="379" cy="379" r="310" opacity=".3"/>
+      <circle cx="379" cy="379" r="342.5" opacity=".2"/>
+      <circle cx="379" cy="379" r="377.5" opacity=".1"/>
+      <circle cx="379" cy="379" r="250" opacity=".5"/>
+      <circle cx="379" cy="378" r="225" opacity=".6"/>
+      <circle cx="379" cy="378" r="202.5" opacity=".7"/>
+      <circle cx="379" cy="378" r="182.5" opacity=".8"/>
+      <circle cx="379" cy="378" r="165" opacity=".9"/>
+      <circle cx="379" cy="378" r="150"/>
+    </g>
+  </g>
+</svg>

@@ -29,7 +29,7 @@ var PATH = {
             'src/scss/**/*.scss'
         ],
         JS: [
-            'src/scripts/template.js',
+            'src/scripts/**/*.js',
             // 'src/scripts/pages/*.js'
         ],
         IMG: [
