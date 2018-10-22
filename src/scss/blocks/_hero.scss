@@ -1,0 +1,38 @@
+.hero {
+	padding: 58px 65px;
+}
+.hero__top {
+	padding-bottom: 47px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.hero_title {
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 43px;
+	color : #005EA9;
+	margin: 0;
+}
+.hero_subtitle {
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0;
+}
+.hero__top .price {
+	margin-right: 66px;
+}
+.hero_heading {
+	padding-bottom: 35px;
+}
+
+.hero__middle {
+	display: flex;
+}
+.hero__col-first {
+	max-width: 620px;
+}
+.hero__col-two {
+	max-width: 520px;
+}

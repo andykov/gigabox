@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="js/libs/tippy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script>
 
 
@@ -44,6 +45,11 @@
         // var tip = btn._tippy
         // console.log(tip);
         $(document).ready(function(){
+            var waypoints = $('.tips-2').waypoint({
+                handler: function(direction) {
+                    notify(this.element.id + ' hit')
+                }
+            })
             // tippy('.btn-tips', {
             //     delay: 100,
             //     arrow: true,
@@ -94,14 +100,89 @@
             $(window).resize(function() {
                 cilinder();
             });
+
+            $('.faq__question').on('click', function () {
+                $(this).toggleClass('is-active').next().slideToggle();
+                $('.faq__question').not(this).removeClass('is-active').next().slideUp();
+            });
+
+            // menu
+            $('.btn-menu').on('click', function(){
+                $(this).toggleClass('is-active');
+                $('.menu__list').toggleClass('is-active');
+            });
         });
     </script>
 </head>
 <body>
+    <div class="menu">
+        <button type="button" class="btn-menu">
+            <span class="btn-menu__burger"></span>
+            <span class="btn-menu__label"></span>
+        </button>
+        <ul class="menu__list">
+            <li><a href="#"><span>Характеристики</span></a></li>
+            <li><a href="#" class="is-active"><span>Преимущества</span></a></li>
+            <li><a href="#"><span>Цены</span></a></li>
+            <li><a href="#"><span>Для бизнеса</span></a></li>
+            <li><a href="#"><span>Видео</span></a></li>
+            <li><a href="#"><span>Этапы сделки</span></a></li>
+            <li><a href="#"><span>Контакты</span></a></li>
+            <li class="menu__phone"><a href="#"><span>8 (800) 551-19-83</span></a></li>
+        </ul>
+    </div>
+    <section class="section">
+		<div class="container">
+			<div class="hero">
+				<div class="hero__top">
+					<a href="#" class="btn-special btn-special--price">
+						<span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
+						<span class="btn-special__label">Цены</span>
+					</a>
+					<a href="tel:88005511983" class="phone">8 (800) 551-19-83</a>
+					<a href="#" class="btn-special btn-special--compare">
+						<span class="btn-special__label">Найдете такое же качество по меньшей цене? <br>Вернем разницу. <u>Смотреть сравнение c аналогами</u></span>
+						<span class="icon icon--blue"><img src="img/svg/compare.svg" alt=""></span>
+					</a>
+				</div>
+
+				<div class="hero__middle">
+					<div class="hero__col-first">
+						<div class="hero_heading">
+							<h1 class="hero_title">GigaBOX</h1>
+							<h2 class="hero_subtitle">Мобильные дата-центры премиум качества - гарантия бесперебойного майнинга.</h2>
+						</div>
+						<div class="presentation">
+							<div class="presentation__text">
+								<span>Скачайте презентацию</span> и узнайте почему есть всего 2 типа мобильных дата-центров - GigaBOX и все остальные.
+							</div>
+							<div class="presentation__img">
+								<img src="img/block_1_img_2.png" alt="">
+                            </div>
+                            
+                            <a href="#" class="btn">
+                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
+                                <span class="btn-blick">Скачать презентацию</span>
+							</a>
+						</div>
+					</div>
+					<div class="hero__col-two">
+						<div class="obj">
+							<img src="img/content/gigabox-hero.png" alt="">
+                            <button type="button" class="btn-tips btn-tips--blue"></button>
+						</div>
+                        <!-- <button type="button" class="btn-inter btn-inter--red btn-inter--middle"><img src="img/svg/play.svg" width="20px" height="28px" alt=""></button> -->
+                        <button type="button" class="btn-play"><img src="img/svg/play.svg" width="20px" height="28px" alt=""></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     <section class="section section--property">
         <div class="container">
+     
             <div class="property">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 758 758">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 758 758">
                         <g data-name="Слой 2">
                           <g fill="none" stroke="#ccc" stroke-miterlimit="10" stroke-width="3" data-name="Слой 1">
                             <circle cx="379" cy="379" r="280" opacity=".4"/>
@@ -116,21 +197,63 @@
                             <circle cx="379" cy="378" r="150"/>
                           </g>
                         </g>
-                      </svg>
+                      </svg> -->
+                      <div class="pulse">
+                            <div class="circle-1"></div>
+                            <div class="circle-2"></div>
+                            <div class="circle-3"></div>
+                            <div class="circle-4"></div>
+                            <div class="circle-5"></div>
+                            <div class="circle-6"></div>
+                        </div>
                 <div class="property__img">
                     <img src="img/content/gigabox.png" alt="">
-                    <button type="button" data-tippy="<b>Эффективная фильтрация</b></br>Весь входящий воздух проходит через карманный фильтр, что позволяет защитить оборудование от попадания пыли и влаги даже при очень сильном ветре" class="btn-tips btn-tips--blue pulse tips-1"></button>
-                    <button type="button" data-tippy="<b>Осевые вентиляторы 2 шт. общей мощностью в 250 000 м3/час</b></br>
-                    Полная замена воздуха происходит каждые 0,8 секунд. Что позволяет поддерживать низкую температура в очень жарком климате." class="btn-tips btn-tips--blue pulse tips-2"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-3"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-4"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-5"></button>
-                    <button type="button" data-tippy="<b>Система видеонаблюдения</b></br>Позволяет видеть каждую часть контейнера и производить дистанционный осмотр оборудования." class="btn-tips btn-tips--blue pulse tips-6"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-7"></button>
-                    <button type="button" class="btn-tips btn-tips--blue pulse tips-8"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-1" data-tippy="<b>Эффективная фильтрация</b></br>Весь входящий воздух проходит через карманный фильтр, что позволяет защитить оборудование от попадания пыли и влаги даже при очень сильном ветре"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-2" data-tippy="<b>Осевые вентиляторы 2 шт. общей мощностью в 250 000 м3/час</b></br>
+                    Полная замена воздуха происходит каждые 0,8 секунд. Что позволяет поддерживать низкую температура в очень жарком климате."></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-3"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-4"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-5"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-6" data-tippy="<b>Система видеонаблюдения</b></br>Позволяет видеть каждую часть контейнера и производить дистанционный осмотр оборудования."></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-7"></button>
+                    <button type="button" class="btn-tips btn-tips--blue tips-8"></button>
                 </div>
                 
             </div>
+        </div>
+    </section>
+    <section class="section section--request">
+        <div class="container">
+            <div class="section__head">
+                <h2>Долго разбираться?</h2>
+                <p>Оставьте заявку на консультацию и наш менеджер ответит на вопросы по ценам, наличию, комплектациям и предложит индивидуальные решения для Ваших задач.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="clientName" placeholder="Введите имя">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-2">
+                                <input type="text" class="form-control" id="clientPhoneCode" placeholder="+7">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="clientPhone" placeholder="номер телефона">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">
+                            <span class="btn-blick">Записаться на экскурсию</span>
+                            <!-- <span class="btn-shadow"></span> -->
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="img/content/roman.png" alt="">
+                </div>
+            </div>
+            
         </div>
     </section>
     <section class="section section--product bg">
@@ -144,7 +267,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3>GigaBox 20-футов</h3></div>
+                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> 20-футов</h3></div>
                         <div class="product__price">
 
                         </div>
@@ -164,7 +287,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3>GigaBox 40-футов</h3></div>
+                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> 40-футов</h3></div>
                         <div class="product__price">
 
                         </div>
@@ -184,7 +307,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3>GigaBox под GPU</h3></div>
+                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> под GPU</h3></div>
                         <div class="product__price">
 
                         </div>
@@ -204,7 +327,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3>GigaBox под заказ</h3></div>
+                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> под заказ</h3></div>
                         <div class="product__price">
 
                         </div>
@@ -221,9 +344,11 @@
     </section>
     <section class="section section--services">
         <div class="container">
-            <div class="section__head">
-                <h2>Превратите расход в доход</h2>
-                <div class="h2">Выгодные решения для бизнеса</div>
+            <div class="section__head text-center">
+                <h2>
+                    <span class="text-uppercase">Превратите расход в доход</span>
+                    Выгодные решения для бизнеса
+                </h2>
                 <p>Получите еще больше пользы от майнинга — используйте выделяемое тепло для дополнительного заработка.</p>
             </div>
             <div class="row">
@@ -288,25 +413,13 @@
                 <h2><span>Готовый арендный бизнес</span> с доходностью от 200 000 рублей в месяц.</h2>
                 <div class="h2">Купите мобильный дата-центр GigaBOX и получайте пассивный доход на сдаче в аренду мест под майнинг.</div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
+            <div class="business__row justify-content-md-center">
                     <div class="business__advantage">Пассивный доход от 200 000 руб. с минимальным участием собственника</div>
-                </div>
-                <div class="col-md-6">
                     <div class="business__advantage">Возможность регулировать свой доход (Чем ниже тариф на электричество, тем выше Ваш заработок)</div>
-                </div>
-                <div class="col-md-6">
                     <div class="business__advantage">Всего 1-2 сотрудника для функционирования бизнеса</div>
-                </div>
-                <div class="col-md-6">
                     <div class="business__advantage">10-ти кратный рост спроса на размещение за 2018 г. (по данным аналитики Яндекса)</div>
-                </div>
-                <div class="col-md-6">
                     <div class="business__advantage">Менее 28 дней на запуск</div>
-                </div>
-                <div class="col-md-6">
                     <div class="business__advantage">Содействие в наполнении дата-центра от компании 1GHS</div>
-                </div>
             </div>
         </div>
     </section>
@@ -419,6 +532,23 @@
             <div class="regions">
                 <div class="regions__map">
                     <img src="img/svg/map-all.svg" alt="">
+                    <div class="markers">
+                        <span class="markers__item" style="top: 56%; left: 10%;"></span>
+                        <span class="markers__item" style="top: 64.7%; left: 13.3%;"></span>
+                        <span class="markers__item" style="top: 61.7%; left: 14%;"></span>
+                        <span class="markers__item" style="top: 62.7%; left: 14.6%;"></span>
+                        <span class="markers__item" style="top: 63%; left: 19.3%;"></span>
+                        <span class="markers__item" style="top: 81%; left: 15.3%;"></span>
+                        <span class="markers__item" style="top: 88%; left: 22%;"></span>
+                        <span class="markers__item" style="top: 55%; left: 54%;"></span>
+                        <span class="markers__item" style="top: 48%; left: 64%;"></span>
+                    </div>
+                    <div class="regions-desc" style="height: 341px;">
+                        <span>Наши мобильные дата-центры размещены по всей России и странам СНГ. Создано уже более 20 работающих площадок, около 10 находятся на стадии разработки</span>
+                    </div>
+                    <div class="regions-desc" style="height: 395px;">
+                        <span><b>Представительство в Китае</b> Наши офисы находятся не только в Москве и Санкт-Петербурге, но и в городе Шэньчжэнь. </span>
+                    </div>   
                 </div>
                 <div class="regions__info">
                     Вы можете связаться с нашими клиентами напрямую и убедиться в качестве нашей продукции. Для этого позвоните по специальному номеру: <a href="tel:+79819336482">8 (981) 933-64-82</a> и назовите свой город. Специалист проверит наличие клиентов и партнеров в Вашем городе, которые готовы показать свои дата-центры, и предоставит контакты для связи с ними.
@@ -426,63 +556,117 @@
             </div>
         </div>
     </section>
+    <section class="section--video">
+        <div class="container">
+            <div class="section__head">
+                <h2><span class="d-inline">1GHS</span> публичная компания</h2>
+                <p>Чтобы убедиться в том, что мы настоящая компания, посмотрите наши видео-материалы и <a href="javascript:void(0)">запишитесь на экскурсию по производству</a></p>
+            </div>
+            <div class="video-list">
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <a href="" class="video-list__item">
+                            <img src="https://picsum.photos/196/115/?random" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn">Записаться на экскурсию</a>
+            </div>
+            <p>Компания 1GHS работает на рынке продажи оборудования для майнинга с 2016 года. В 2018 году мы запустили собственное производство мобильных дата-центров GigaBOX и за пол года наш продукт стал одним из самых востребованных на рынке хостинга и мобильных дата-центров.</p>
+        </div>
+    </section>
     <section class="section section--team">
         <div class="container">
+            <div class="section__head" data-head="Команда">
+                <h2>Команда</h2>
+            </div>
             <div class="row justify-content-md-center">
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Малышев Роман</b></span>
                                     <span>Финансовый директор</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Бухгалтерия: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Бухгалтерия:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Юридический отдел: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Юридический от дел:</span> 
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Служба безопасности</li>
+                                    <li><span>Служба безопасности</span></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Бетин Анатолий</b></span>
                                     <span>Коммерческий директор</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Отдел маркетинга: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел маркетинга:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>HR: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>HR:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
                                 </ul>
@@ -491,45 +675,45 @@
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Григоренко Тимофей</b></span>
                                     <span>Директор по развитию</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Отдел продаж: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел продаж:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Упаковка: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Упаковка:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>PR: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>PR:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Видеопроизводство: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Видеопроизводство:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
                                 </ul>
@@ -538,29 +722,29 @@
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Трубаров Иван</b></span>
                                     <span>Директор производства</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Отдел производства: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел производства:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                             <span>+35чел.</span>
                                         </div>
                                     </li>
-                                    <li>Сервисный центр: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Сервисный центр:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Отдел качества: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел качества:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
                                 </ul>
@@ -569,30 +753,30 @@
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Бородин Кирилл</b></span>
                                     <span>Директор филиала в г. Москва</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Отдел закупок: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел закупок:</span> 
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Отдел проверки/отгрузки оборудования: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел проверки/отгрузки оборудования:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Отдел логистики:  
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел логистики:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
                                 </ul>
@@ -601,36 +785,36 @@
                         <div class="col-md-6">
                             <div class="member">
                                 <div class="member__photo">
-                                    <img src="" alt="">
+                                    <img src="https://picsum.photos/113/113/?random" alt="">
                                 </div>
                                 <div class="member__name">
                                     <span><b>Сковрцов Николай</b></span>
                                     <span>Директор филиала в г. Санкт-Петербург</span>
                                 </div>
                                 <ul class="member__department">
-                                    <li>Отдел продаж В2В: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел продаж В2В:</span> 
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Отдел логистики: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Отдел логистики:</span> 
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
-                                    <li>Колл-центр: 
-                                        <div>
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
-                                            <img src="img/svg/user.svg" width="18px" alt="">
+                                    <li><span>Колл-центр:</span>
+                                        <div class="member__staff">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
+                                            <img src="img/svg/user.svg" alt="">
                                         </div>
                                     </li>
                                 </ul>
@@ -660,16 +844,55 @@
     <section class="section section--faq">
         <div class="container">
             <div class="section__head">
-                <h2>Часто задаваемые вопросы</h2>
+                <h2 class="text-center"><span>Часто задаваемые вопросы</span></h2>
             </div>
+
             <div class="faq">
                 <div class="faq__list">
                     <div class="faq__item">
-                        <div class="faq__question"></div>
-                        <div class="faq__answer"></div>
+                        <div class="faq__question"><a href="javascript:void(0)">Как осуществляется доставка и сколько это стоит?</a></div>
+                        <div class="faq__answer">
+                            <div class="faq__answer-body">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum illum labore sunt expedita numquam excepturi voluptatum. Quidem sunt fuga obcaecati dolor iste possimus libero at eaque ratione quo, temporibus quasi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question"><a href="javascript:void(0)">Подключение дата-центра к электросетям уже входит в стоимость?</a></div>
+                        <div class="faq__answer">
+                            <div class="faq__answer-body">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum illum labore sunt expedita numquam excepturi voluptatum. Quidem sunt fuga obcaecati dolor iste possimus libero at eaque ratione quo, temporibus quasi.</p>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla et nobis odio aliquid distinctio velit adipisci. Temporibus beatae ullam sunt voluptates rem magni necessitatibus ipsa fugiat, explicabo, exercitationem, eos voluptatem mollitia? Et deleniti perferendis obcaecati, tenetur earum recusandae accusantium ut possimus eligendi suscipit minus nihil eius ducimus dolorem praesentium dicta dolores corporis, alias ab eos unde soluta laborum omnis? Facere unde laboriosam inventore iure a tempora sequi odio aut, et perspiciatis suscipit omnis quas beatae distinctio sunt, quasi vero commodi nihil, excepturi molestias numquam consectetur architecto at minima! Veritatis velit ipsa facilis nostrum natus blanditiis mollitia fugiat omnis, quia dicta aliquam corrupti, magni eum ullam in quod eligendi suscipit, alias expedita. Quia recusandae maxime ipsum qui minus porro sunt optio labore accusantium praesentium eos architecto tempora animi, a laborum asperiores voluptatibus similique repellendus maiores rerum eaque laboriosam et suscipit! Natus animi at nisi labore alias corporis sunt praesentium vel? Officiis ipsum quod illo omnis unde harum quia deleniti expedita ratione, fugit doloremque voluptatum dignissimos repudiandae dolores culpa ducimus minus, nihil iste excepturi blanditiis incidunt, natus mollitia. Modi inventore, ullam non doloremque dignissimos cumque facilis maiores harum. Animi ullam aperiam necessitatibus molestiae itaque voluptatum et, iure modi laudantium mollitia eum vel!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question"><a href="javascript:void(0)">Даете ли вы гарантию на мобильные дата-центры?</a></div>
+                        <div class="faq__answer">
+                            <div class="faq__answer-body">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum illum labore sunt expedita numquam excepturi voluptatum. Quidem sunt fuga obcaecati dolor iste possimus libero at eaque ratione quo, temporibus quasi.</p>
+                                <a href="#">Link example</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question"><a href="javascript:void(0)">Могу ли я расплатиться криптовалютой или оформить рассрочку?</a></div>
+                        <div class="faq__answer">
+                            <div class="faq__answer-body">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum illum labore sunt expedita numquam excepturi voluptatum. Quidem sunt fuga obcaecati dolor iste possimus libero at eaque ratione quo, temporibus quasi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <div class="faq__question"><a href="javascript:void(0)">В чем ваше преимущество перед конкурентами? Есть какие-то особенности?</a></div>
+                        <div class="faq__answer">
+                            <div class="faq__answer-body">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum illum labore sunt expedita numquam excepturi voluptatum. Quidem sunt fuga obcaecati dolor iste possimus libero at eaque ratione quo, temporibus quasi.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p>Остались какие-то вопросы? Позвоните по тел. <a href="tel:+78005511983">+7 (800) 551-19-83</a>.</p>
+                <p class="text-center">Остались какие-то вопросы? Позвоните по тел. <a href="tel:+78005511983">+7 (800) 551-19-83</a>.</p>
             </div>
         </div>
     </section>

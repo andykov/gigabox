@@ -78,7 +78,7 @@ ul ol {
   margin-bottom: 0; }
 
 dt {
-  font-weight: 700; }
+  font-weight: bold; }
 
 dd {
   margin-bottom: .5rem;
@@ -116,7 +116,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #0056b3;
+    color: #29ABE2;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {

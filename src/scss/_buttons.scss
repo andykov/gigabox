@@ -3,10 +3,25 @@
 //
 // Base styles
 //
-
+@keyframes blick {
+  0% {
+    left: -20%;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    left: 110%;
+  }
+}
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-weight: $btn-font-weight;
   text-align: center;
   white-space: nowrap;
@@ -14,20 +29,89 @@
   user-select: none;
   border: $btn-border-width solid transparent;
   overflow: hidden;
-  min-height: 56px;
+  min-height: 46px;
   
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
-  padding: 8px 30px;
+  
+  padding: 6px 20px;
   box-shadow: 0 4px 0 rgba(0, 31, 81, 0.8);
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 900;
   text-transform: uppercase;
   transform: translateY(0);
   transition: box-shadow 0.14s, transform 0.14s;
   z-index: 1;
+
+  &[type="submit"] {
+    background-color: transparent;
+  }
+
+  // 6px 20px
+  @include media-breakpoint-up(sm) {
+    
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+    padding: 8px 30px;
+    min-height: 56px;
+  }
+
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   background: url(../img/svg/btn_shadow.svg) no-repeat center center;
+  //   width: 591px;
+  //   height: 130px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
+
+  &-bounce {
+    transition:.25s;
+    animation: 1.25s bounce infinite;
+  }
+
+  .btn-shadow {
+    position: absolute;
+    background: url(../img/svg/btn_shadow.svg) no-repeat center center;
+    width: 591px;
+    height: 130px;
+  }
+
+  .btn-blick {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      bottom: -50%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6) 100%);
+      width: 45px;
+      transform: skewX(-22deg);
+      left: -65%;
+      animation-name: blick;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    &:after {
+      background: url(img/btn_pattern.png) repeat;
+      content: '';
+      position: absolute;
+      display: block;
+      transform: rotate(45deg);
+      background: rgba(18, 122, 203, 1) 0%;
+      width: 400px;
+      height: 400px;
+      top: -235%;
+      right: 40px;
+      z-index: -1;
+    }
+  }
+
+  
 
   .icon {
     display: inline-block;
@@ -39,8 +123,7 @@
     text-align: center;
   }
 
-  &:before,
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     display: block;
@@ -48,18 +131,22 @@
     background: rgba(18, 122, 203, 1) 0%;
     width: 400px;
     height: 400px;
-    top: -235%;
-    right: 40px;
+    top: -130px;
+    right: 15px;
     z-index: -1;
+
+    @include media-breakpoint-up(md) {  
+      right: 40px;
+    }
   }
 
   &:before {
     background: linear-gradient(0deg, rgba(18, 122, 203, 1) 0%, rgba(33, 146, 234, 1) 100%);
   }
 
-  &:after {
-    background: url(img/btn_pattern.png) repeat;
-  }
+  // &:after {
+  //   background: url(img/btn_pattern.png) repeat;
+  // }
 
   // Share hover and focus styles
   @include hover-focus {
@@ -238,4 +325,72 @@ input[type="button"] {
 .btn-tips--middle {
 	width: 74px;
 	height: 74px;
+}
+
+
+.btn-special {
+	display: flex;
+    align-items: center;
+	background-color: rgba(255,255,255, 0.58);
+	box-shadow: 0 5px 4px 0 rgba(0,0,0, 0.3);
+	border-radius: 100px;
+	transform: translateY(0px);
+	transition: all 0.2s;
+	text-decoration: none;
+	font-weight: 300;
+	color : #333;
+}
+.btn-special--price {
+	padding: 6px;
+	font-size: 18px;
+}
+.btn-special--compare {
+	font-size: 14px;
+}
+.btn-special__label {
+	padding: 0 12px;
+}
+.btn-special--compare .icon {
+	width: 65px;
+	height: 65px;
+}
+.btn-special--compare .btn-special__label {
+	padding-left: 25px;
+}
+.btn-special .icon {
+	box-shadow: 4px 4px 4px rgba(0,0,0, 0.3);
+	text-align: center;
+}
+.btn-special .icon img {
+	vertical-align: middle;
+}
+
+.btn-special:hover {
+	transform: translateY(5px);
+	box-shadow: 0 0px 4px 0 rgba(0,0,0, 0.3);
+}
+
+.btn-special {
+  &--pulse {
+    animation-name: btnSpecialPulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes btnSpecialPulse {
+  0% {
+      transform: scale(.9);
+      opacity: .7
+  }
+
+  50% {
+      transform: scale(1);
+      opacity: 1
+  }
+
+  100% {
+      transform: scale(.9);
+      opacity: .7
+  }
 }
