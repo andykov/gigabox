@@ -97,12 +97,11 @@
     }
 
     &:after {
-      background: url(img/btn_pattern.png) repeat;
       content: '';
+      background: url(img/btn_pattern.png) repeat;
       position: absolute;
       display: block;
       transform: rotate(45deg);
-      background: rgba(18, 122, 203, 1) 0%;
       width: 400px;
       height: 400px;
       top: -235%;
@@ -329,8 +328,8 @@ input[type="button"] {
 
 
 .btn-special {
-	display: flex;
-    align-items: center;
+	display: inline-flex;
+  align-items: center;
 	background-color: rgba(255,255,255, 0.58);
 	box-shadow: 0 5px 4px 0 rgba(0,0,0, 0.3);
 	border-radius: 100px;
