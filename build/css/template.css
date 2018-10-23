@@ -2262,19 +2262,6 @@ textarea.form-control {
             animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite; }
-  .btn .btn-blick:after {
-    content: '';
-    background: url(img/btn_pattern.png) repeat;
-    position: absolute;
-    display: block;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-    width: 400px;
-    height: 400px;
-    top: -235%;
-    right: 40px;
-    z-index: -1; }
   .btn .icon {
     display: inline-block;
     vertical-align: middle;
@@ -2282,27 +2269,14 @@ textarea.form-control {
             border-radius: 100%;
     line-height: 1;
     text-align: center; }
-  .btn:before {
-    content: '';
-    position: absolute;
-    display: block;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-    background: #127acb 0%;
-    width: 400px;
-    height: 400px;
-    top: -130px;
-    right: 15px;
-    z-index: -1; }
-    @media (min-width: 768px) {
-      .btn:before {
-        right: 40px; } }
-  .btn:before {
+  .btn.clip {
+    --notchSize: 20px;
     background: -webkit-gradient(linear, left bottom, left top, from(#127acb), to(#2192ea));
     background: -webkit-linear-gradient(bottom, #127acb 0%, #2192ea 100%);
     background: -o-linear-gradient(bottom, #127acb 0%, #2192ea 100%);
-    background: linear-gradient(0deg, #127acb 0%, #2192ea 100%); }
+    background: linear-gradient(0deg, #127acb 0%, #2192ea 100%);
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, -webkit-calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, 0% 100%, 0% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 0% 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% 100%, 0% 100%, 0% 100%, 0% 100%); }
   .btn:hover, .btn:focus {
     text-decoration: none;
     -webkit-box-shadow: 0 0 0 rgba(0, 31, 81, 0.8);
