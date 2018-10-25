@@ -1,4 +1,3 @@
-
 // var lineDrawing = anime({
 //     targets: '.property svg circle',
 //     strokeDashoffset: [anime.setDashoffset, 0],

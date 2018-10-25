@@ -8921,8 +8921,7 @@ body {
     font-weight: 300;
     line-height: 1.2;
     color: #fff;
-    padding: 37.5px 15px;
-    height: 100%; }
+    padding: 37.5px 15px; }
     .services__link span {
       font-weight: 600;
       color: #00406B; }
@@ -8976,7 +8975,6 @@ body {
       font-size: 18px;
       font-weight: 300;
       line-height: 1.2;
-      height: 100%;
       position: relative;
       display: -webkit-box;
       display: -webkit-flex;
