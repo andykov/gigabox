@@ -18,10 +18,7 @@
 //         });
 // }
 
-
-
-$(document).ready(function () {
-    tippy.setDefaults({
+tippy.setDefaults({
         arrow: true,
         arrowType: 'round',
         arrowTransform: 'scale(1.9)',
@@ -32,6 +29,9 @@ $(document).ready(function () {
         trigger: 'mouseenter click'
         // hideOnClick: 'toggle'
     });
+
+$(document).ready(function () {
+    
     // var waypoints = $('.tips-2').waypoint({
     //     handler: function(direction) {
     //         notify(this.element.id + ' hit')
@@ -187,7 +187,7 @@ $(document).ready(function () {
             var currentVal = $('input[type="range"]').val();
             currentVal = String(currentVal).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ')
 
-            $('.rangeslider__handle').append('<output>' + currentVal + '</output>');
+            $('.rangeslider__handle').append('<output>' + currentVal + 'руб.</output>');
         },
         onSlide: function (position, value) {
             value = String(value).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
