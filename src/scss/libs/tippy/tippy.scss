@@ -179,7 +179,7 @@
 .tippy-roundarrow {
   width: 24px;
   height: 8px;
-  fill: #333;
+  fill: #fff;
   pointer-events: none;
 }
 
@@ -215,6 +215,7 @@
 .tippy-content {
   b {
     font-size: 18px;
+    line-height: 1.2;
   }
 }
 

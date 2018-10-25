@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="css/libs/rangeslider.css">
     <link rel="stylesheet" href="css/template.css">
 
-    <!-- SCRIPTS -->
-    <script src="js/libs/jquery-3.3.1.min.js"></script>
-    <script src="js/libs/jquery.waypoints.min.js"></script>
-    <script src="js/libs/tippy.min.js"></script>
-    <script src="js/libs/rangeslider.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script> -->
-    <script src="js/template.js"></script>
+    
 
 </head>
 <body>
@@ -28,16 +22,16 @@
         </button>
         <ul class="menu__list">
             <li><a href="#"><span>Характеристики</span></a></li>
-            <li><a href="#" class="is-active"><span>Преимущества</span></a></li>
-            <li><a href="#"><span>Цены</span></a></li>
-            <li><a href="#"><span>Для бизнеса</span></a></li>
-            <li><a href="#"><span>Видео</span></a></li>
-            <li><a href="#"><span>Этапы сделки</span></a></li>
-            <li><a href="#"><span>Контакты</span></a></li>
+            <li><a href="#advantage" class="is-active"><span>Преимущества</span></a></li>
+            <li><a href="#price"><span>Цены</span></a></li>
+            <li><a href="#services"><span>Для бизнеса</span></a></li>
+            <li><a href="#video"><span>Видео</span></a></li>
+            <li><a href="#steps"><span>Этапы сделки</span></a></li>
+            <li><a href="#contacts"><span>Контакты</span></a></li>
             <li class="menu__phone">
                 <a href="#">
                     <span class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="11px" height="11px" viewBox="0 0 19.85 19.56"><g><path fill="#333333" d="M19.39 13.13s-2-1-3.29-1.63c-1.44-.73-3.13.63-3.92 1.41a10 10 0 0 1-3.32-2.08 9.78 9.78 0 0 1-2.11-3.27c.79-.79 2.17-2.45 1.43-3.86C7.53 2.45 6.53.45 6.53.45A.82.82 0 0 0 5.79 0H4.14A4.94 4.94 0 0 0 0 4.89c0 2.56 3.11 7.48 5.21 9.54s7.08 5.13 9.68 5.13a5 5 0 0 0 5-4.07v-1.63a.79.79 0 0 0-.5-.73z"/></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11px" height="11px" viewBox="0 0 19.85 19.56"><g><path fill="#333333" d="M19.39 13.13s-2-1-3.29-1.63c-1.44-.73-3.13.63-3.92 1.41a10 10 0 0 1-3.32-2.08 9.78 9.78 0 0 1-2.11-3.27c.79-.79 2.17-2.45 1.43-3.86C7.53 2.45 6.53.45 6.53.45A.82.82 0 0 0 5.79 0H4.14A4.94 4.94 0 0 0 0 4.89c0 2.56 3.11 7.48 5.21 9.54s7.08 5.13 9.68 5.13a5 5 0 0 0 5-4.07v-1.63a.79.79 0 0 0-.5-.73z"/></g></svg>
                     </span>
                     <span>8 (800) 551-19-83</span>
                 </a>
@@ -48,12 +42,12 @@
 		<div class="container">
 			<div class="hero">
 				<div class="hero__top">
-					<a href="#" class="btn-special btn-special--price">
+					<a href="#price" class="btn-special btn-special--price">
 						<span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
 						<span class="btn-special__label">Цены</span>
 					</a>
 					<a href="tel:88005511983" class="phone">8 (800) 551-19-83</a>
-					<a href="#" class="btn-special btn-special--compare">
+					<a href="#compare" class="btn-special btn-special--compare">
 						<span class="btn-special__label">Найдете такое же качество по меньшей цене? <br>Вернем разницу. <u>Смотреть сравнение c аналогами</u></span>
 						<span class="icon icon--blue"><img src="img/svg/compare.svg" alt=""></span>
 					</a>
@@ -61,7 +55,7 @@
 
 				<div class="hero__middle">
 					<div class="hero__col-first">
-						<div class="hero_heading">
+						<div class="hero__heading">
 							<h1 class="hero_title">GigaBOX</h1>
 							<h2 class="hero_subtitle">Мобильные дата-центры премиум качества - гарантия бесперебойного майнинга.</h2>
 						</div>
@@ -70,22 +64,23 @@
 								<span>Скачайте презентацию</span> и узнайте почему есть всего 2 типа мобильных дата-центров - GigaBOX и все остальные.
 							</div>
 							<div class="presentation__img">
-								<img src="img/block_1_img_2.png" alt="">
+								<img src="img/content/pres.png" alt="">
                             </div>
                             
-                            <a href="#" class="btn">
-                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
+                            <a href="#" class="btn animate-bounce">
+                                <span class="icon"><img src="img/svg/download.svg" alt=""></span>
                                 <span class="btn-blick">Скачать презентацию</span>
 							</a>
 						</div>
 					</div>
 					<div class="hero__col-two">
-						<div class="obj">
-							<img src="img/content/gigabox-hero.png" alt="">
-                            <button type="button" class="btn-tips btn-tips--blue"></button>
-						</div>
-                        <!-- <button type="button" class="btn-inter btn-inter--red btn-inter--middle"><img src="img/svg/play.svg" width="20px" height="28px" alt=""></button> -->
-                        <button type="button" class="btn-play"><img src="img/svg/play.svg" width="20px" height="28px" alt=""></button>
+						<div class="hero__img" style="background-image: url(img/content/gigabox-hero-shadow.png)">
+							<!-- <img src="img/content/gigabox-hero.png" alt=""> -->
+                            <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="top: 35.5%; left: 38%;"></button>
+                            <button type="button" class="btn-tips btn-tips--play btn-tips--red btn-tips--middle spin" style="top: 73%; left: 47%;">
+                                <span>Смотреть 2-х минутную<br>видео-презентацию</span>
+                            </button>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -111,28 +106,28 @@
                           </g>
                         </g>
                       </svg> -->
-                      <div class="pulse">
-                            <div class="circle-1"></div>
-                            <div class="circle-2"></div>
-                            <div class="circle-3"></div>
-                            <div class="circle-4"></div>
-                            <div class="circle-5"></div>
-                            <div class="circle-6"></div>
-                            <div class="circle-7"></div>
-                            <div class="circle-8"></div>
-                            <div class="circle-9"></div>
+                      <div class="ripple">
+                            <div class="ripple__circle ripple__circle--1"></div>
+                            <div class="ripple__circle ripple__circle--2"></div>
+                            <div class="ripple__circle ripple__circle--3"></div>
+                            <div class="ripple__circle ripple__circle--4"></div>
+                            <div class="ripple__circle ripple__circle--5"></div>
+                            <div class="ripple__circle ripple__circle--6"></div>
+                            <div class="ripple__circle ripple__circle--7"></div>
+                            <div class="ripple__circle ripple__circle--8"></div>
+                            <div class="ripple__circle ripple__circle--9"></div>
                         </div>
                 <div class="property__img">
                     <img src="img/content/gigabox.png" alt="">
-                    <button type="button" class="btn-tips btn-tips--blue tips-1 btn-tips-onscroll" data-tippy-placement="bottom" data-tippy="<b>Эффективная фильтрация</b></br>Весь входящий воздух проходит через карманный фильтр, что позволяет защитить оборудование от попадания пыли и влаги даже при очень сильном ветре"></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-2 btn-tips-onscroll" data-tippy="<b>Осевые вентиляторы 2 шт. общей мощностью в 250 000 м3/час</b></br>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse btn-tips-onscroll" style="left: 5%; top: 55%;" data-tippy-offset="102, 28" data-tippy-placement="bottom" data-tippy="<b>Эффективная фильтрация</b></br>Весь входящий воздух проходит через карманный фильтр, что позволяет защитить оборудование от попадания пыли и влаги даже при очень сильном ветре"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse btn-tips-onscroll" style="left: 11%; top: 32%;" data-tippy-offset="102, 28" data-tippy="<b>Осевые вентиляторы 2 шт. общей мощностью в 250 000 м3/час</b></br>
                     Полная замена воздуха происходит каждые 0,8 секунд. Что позволяет поддерживать низкую температура в очень жарком климате."></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-3" data-tippy="<b>tips-3</b>"></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-4" data-tippy="<b>tips-4</b>"></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-5" data-tippy="<b>tips-5</b>"></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-6 btn-tips-onscroll" data-tippy="<b>Система видеонаблюдения</b></br>Позволяет видеть каждую часть контейнера и производить дистанционный осмотр оборудования."></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-7" data-tippy="<b>tips-7</b>"></button>
-                    <button type="button" class="btn-tips btn-tips--blue tips-8" data-tippy="<b>tips-8</b>"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 35.9%; top: 58%;" data-tippy="<b>tips-3</b>"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 51%; top: 30%;" data-tippy="<b>tips-4</b>"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 71%; top: 9%;" data-tippy="<b>tips-5</b>"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse btn-tips-onscroll" style="right: 9%; top: 10%;" data-tippy="<b>Система видеонаблюдения</b></br>Позволяет видеть каждую часть контейнера и производить дистанционный осмотр оборудования."></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 72.4%; top: 38%;" data-tippy="<b>tips-7</b>"></button>
+                    <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 70.4%; top: 59%;" data-tippy="<b>tips-8</b>"></button>
                 </div>
                 
             </div>
@@ -172,7 +167,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--compare">
+    <section id="compare" class="section section--compare">
         <div class="container">
             <div class="container-narrow">
                 <div class="compare">
@@ -263,6 +258,7 @@
                             </div>
                             <div class="col-auto">
                                 <button type="submit" class="btn">
+                                    <span class="icon"><img src="img/svg/download.svg" alt=""></span>
                                     <span class="btn-blick">Скачать презентацию</span>
                                 </button>
                             </div>
@@ -272,7 +268,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--product bg">
+    <section id="price" class="section section--product bg">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -287,14 +283,15 @@
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
-                                <span class="btn-special__label">Цены</span>
+                                <span class="btn-special__label">от 1,4 млн.</span>
                             </a>
+                            <ul class="product__price-type">
+                                <li><a href="#">Ultra</a></li>
+                                <li><a href="#">Mega</a></li>
+                            </ul>
                         </div>
                         <div class="product__request">
-							<a href="#" class="btn">
-                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
-								Получить консультацию
-							</a>
+							<a href="#" class="btn">Получить консультацию</a>
                         </div>
                     </div>
                 </div>
@@ -310,14 +307,16 @@
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
-                                <span class="btn-special__label">Цены</span>
+                                <span class="btn-special__label">от 1,9 млн.</span>
                             </a>
+                            <ul class="product__price-type">
+                                <li><a href="#">Standart</a></li>
+                                <li><a href="#">Premium</a></li>
+                                <li><a href="#">Ultra</a></li>
+                            </ul>
                         </div>
                         <div class="product__request">
-							<a href="#" class="btn">
-                                <span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
-								Получить консультацию
-							</a>
+							<a href="#" class="btn">Получить консультацию</a>
                         </div>
                     </div>
                 </div>
@@ -331,13 +330,17 @@
                         </div>
                         <div class="product__title"><h3><span class="d-inline">GigaBox</span> под GPU</h3></div>
                         <div class="product__price">
-
+                            <a href="#" class="btn-special btn-special--price">
+                                <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
+                                <span class="btn-special__label">от 2 млн.</span>
+                            </a>
+                            <ul class="product__price-type">
+                                <li><a href="#">(M) на 1120 видеокарт</a></li>
+                                <li><a href="#">(L) на 1456 видеокарт</a></li>
+                            </ul>
                         </div>
                         <div class="product__request">
-							<a href="#" class="btn">
-								<span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
-								Получить консультацию
-							</a>
+							<a href="#" class="btn">Получить консультацию</a>
                         </div>
                     </div>
                 </div>
@@ -351,20 +354,20 @@
                         </div>
                         <div class="product__title"><h3><span class="d-inline">GigaBox</span> под заказ</h3></div>
                         <div class="product__price">
-
+                            <a href="#" class="btn-special btn-special--price">
+                                <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
+                                <span class="btn-special__label">Договорная цена</span>
+                            </a>
                         </div>
                         <div class="product__request">
-							<a href="#" class="btn">
-								<span class="icon"><img src="img/svg/pdf.svg" alt=""></span>
-								Получить консультацию
-							</a>
+							<a href="#" class="btn">Получить консультацию</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section--services">
+    <section id="services" class="section section--services">
         <div class="container">
             <div class="section__head text-center">
                 <h2>
@@ -374,8 +377,7 @@
                 <p>Получите еще больше пользы от майнинга — используйте выделяемое тепло для дополнительного заработка.</p>
             </div>
             <div class="services">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="services__row">
                         <div class="services__item">
                             <a href="#" class="services__link">
                                 <div class="services__icon">
@@ -387,8 +389,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                  
                         <div class="services__item">
                             <a href="#" class="services__link">
                                 <div class="services__icon">
@@ -400,8 +401,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+          
                         <div class="services__item">
                             <a href="#" class="services__link">
                                 <div class="services__icon">
@@ -413,8 +413,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+              
                         <div class="services__item">
                             <a href="#" class="services__link">
                                 <div class="services__icon">
@@ -426,85 +425,96 @@
                                 </div>
                             </a>
                         </div>
+           
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="advantage" class="section section--business">
+        <div class="container">
+            <div class="business">
+                <div class="section__head">
+                    <h2><span>Готовый арендный бизнес</span> с доходностью от 200 000 рублей в месяц.</h2>
+                    <div class="h2">Купите мобильный дата-центр GigaBOX и получайте пассивный доход на сдаче в аренду мест под майнинг.</div>
+                </div>
+                <div class="business__row justify-content-md-center">
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>Пассивный доход от 200 000 руб. с минимальным участием собственника</span></div>
+                    </div>
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>Возможность регулировать свой доход <small>(Чем ниже тариф на электричество, тем выше Ваш заработок)</small></span></div>
+                    </div>
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>Всего 1-2 сотрудника для функционирования бизнеса</span></div>
+                    </div>
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>10-ти кратный рост спроса на размещение за 2018 г. <small>(по данным аналитики Яндекса)</small></span></div>
+                    </div>
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>Менее 28 дней на запуск</span></div>
+                    </div>
+                    <div class="business__advantage">
+                        <div class="business__advantage-inner"><span>Содействие в наполнении дата-центра от компании 1GHS</span></div>
+                    </div>
+                </div>
+                <div class="business__form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Заполни анкету партнера прямо сейчас</h2>
+                        </div>
+                        <div class="col-md-6">
+                            <div>Заполните анкету и получите персональный финансовый план окупаемости для Вашего города</div>
+                            <form action="">
+                                <div class="form-row">
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <input type="text" class="form-control" id="" placeholder="Введите имя">
+                                        </div>
+                                        <div class="form-group col">
+                                            <input type="text" class="form-control" id="" placeholder="Номер телефона">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col">
+                                            <input type="text" class="form-control" id="" placeholder="E-mail">
+                                        </div>
+                                        <div class="form-group col">
+                                            <input type="text" class="form-control" id="" placeholder="Город">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-range">
+                                            <span class="input-range__label">Бюджет</span>
+                                            <input
+                                                type="range"
+                                                min="100000"
+                                                max="1000000"
+                                                step="100000"
+                                                value="700000">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn">
+                                            <span class="btn-blick">Получить фин.план</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section--business">
-        <div class="container">
-            <div class="section__head">
-                <h2><span>Готовый арендный бизнес</span> с доходностью от 200 000 рублей в месяц.</h2>
-                <div class="h2">Купите мобильный дата-центр GigaBOX и получайте пассивный доход на сдаче в аренду мест под майнинг.</div>
-            </div>
-            <div class="business">
-                <div class="business__row justify-content-md-center">
-                    <div class="business__advantage">Пассивный доход от 200 000 руб. с минимальным участием собственника</div>
-                    <div class="business__advantage">Возможность регулировать свой доход (Чем ниже тариф на электричество, тем выше Ваш заработок)</div>
-                    <div class="business__advantage">Всего 1-2 сотрудника для функционирования бизнеса</div>
-                    <div class="business__advantage">10-ти кратный рост спроса на размещение за 2018 г. (по данным аналитики Яндекса)</div>
-                    <div class="business__advantage">Менее 28 дней на запуск</div>
-                    <div class="business__advantage">Содействие в наполнении дата-центра от компании 1GHS</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Заполни анкету партнера прямо сейчас</h2>
-                </div>
-                <div class="col-md-6">
-                    <div>Заполните анкету и получите персональный финансовый план окупаемости для Вашего города</div>
-                    <form action="">
-                        <div class="form-row">
-                            <div class="col-auto">
-                                <input type="text" class="form-control" id="dlPresPhone" placeholder="Номер телефона">
-                            </div>
-                            <div class="form-row">
-                                <div class="col-auto">
-                                    <input type="text" class="form-control" id="" placeholder="Введите имя">
-                                </div>
-                                <div class="col-auto">
-                                    <input type="text" class="form-control" id="" placeholder="Номер телефона">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-auto">
-                                    <input type="text" class="form-control" id="" placeholder="E-mail">
-                                </div>
-                                <div class="col-auto">
-                                    <input type="text" class="form-control" id="" placeholder="Город">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="input-range">
-                                    <span class="input-range__label">Бюджет</span>
-                                    <input
-                                        type="range"
-                                        min="100000"
-                                        max="1000000"
-                                        step="100000"
-                                        value="700000">
-                                </div>
-                            </div>
-                            
-                            
-                            <div class="col-auto">
-                                <button type="submit" class="btn">
-                                    <span class="btn-blick">Получить фин.план</span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    <section class="section section--how-work bg">
+    <section id="steps" class="section section--steps bg">
         <div class="container">
             <div class="section__head">
                 <h2>Как мы работаем</h2>
             </div>
-            <div class="how-work">
+            <div class="steps">
                 <div class="cilinder-lines">
                     <svg class="logo" width="100%" height="100%" viewBox="0 0 500 448">
                         <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
@@ -516,89 +526,89 @@
                         <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
                     </svg>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Заявка или звонок</div>
-                        <div class="how-work__desc">Вы оставляете заявку или звоните по телефону</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Заявка или звонок</div>
+                        <div class="steps__desc">Вы оставляете заявку или звоните по телефону</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Отправляем коммерческое предложение,</div>
-                        <div class="how-work__desc">а также дополнительные материалы для ознакомления с нашей продукцией</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Отправляем коммерческое предложение,</div>
+                        <div class="steps__desc">а также дополнительные материалы для ознакомления с нашей продукцией</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Конференция</div>
-                        <div class="how-work__desc">После ознакомления организовываем конференцию с нашим техническим директором для уточнения технических вопросов</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Конференция</div>
+                        <div class="steps__desc">После ознакомления организовываем конференцию с нашим техническим директором для уточнения технических вопросов</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Встреча</div>
-                        <div class="how-work__desc">Встречаемся с Вами в офисе или на производстве</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Встреча</div>
+                        <div class="steps__desc">Встречаемся с Вами в офисе или на производстве</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Сделка</div>
-                        <div class="how-work__desc">Подписание договора и оплата</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Сделка</div>
+                        <div class="steps__desc">Подписание договора и оплата</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Отгрузка</div>
-                        <div class="how-work__desc">Отгрузка с производства и подписание акта</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Отгрузка</div>
+                        <div class="steps__desc">Отгрузка с производства и подписание акта</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Логистика</div>
-                        <div class="how-work__desc">Организовываем логистику до Вашей площадки</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Логистика</div>
+                        <div class="steps__desc">Организовываем логистику до Вашей площадки</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
                     </div>
                 </div>
-                <div class="how-work__item">
-                    <div class="how-work__text">
-                        <div class="how-work__title">Помощь</div>
-                        <div class="how-work__desc">Помощь в установке и подключении</div>
+                <div class="steps__item">
+                    <div class="steps__text">
+                        <div class="steps__title">Помощь</div>
+                        <div class="steps__desc">Помощь в установке и подключении</div>
                     </div>
-                    <div class="how-work__step">
+                    <div class="steps__step">
                         <div class="cylinder">
                             <span></span>
                         </div>
@@ -633,7 +643,7 @@
         </div>
     </section>
     <section class="bg">
-        <section class="section section--video">
+        <section id="video" class="section section--video">
             <div class="container">
                 <div class="section__head">
                     <h2><span class="d-inline">1GHS</span> публичная компания</h2>
@@ -755,6 +765,37 @@
                                         <img src="https://picsum.photos/113/113/?random" alt="">
                                     </div>
                                     <div class="member__name">
+                                        <span><b>Трубаров Иван</b></span>
+                                        <span>Директор производства</span>
+                                    </div>
+                                    <ul class="member__department">
+                                        <li><span>Отдел производства:</span>
+                                            <div class="member__staff">
+                                                <img src="img/svg/user.svg" alt="">
+                                                <img src="img/svg/user.svg" alt="">
+                                                <span>+35чел.</span>
+                                            </div>
+                                        </li>
+                                        <li><span>Сервисный центр:</span>
+                                            <div class="member__staff">
+                                                <img src="img/svg/user.svg" alt="">
+                                                <img src="img/svg/user.svg" alt="">
+                                            </div>
+                                        </li>
+                                        <li><span>Отдел качества:</span>
+                                            <div class="member__staff">
+                                                <img src="img/svg/user.svg" alt="">
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="member">
+                                    <div class="member__photo">
+                                        <img src="https://picsum.photos/113/113/?random" alt="">
+                                    </div>
+                                    <div class="member__name">
                                         <span><b>Григоренко Тимофей</b></span>
                                         <span>Директор по развитию</span>
                                     </div>
@@ -796,37 +837,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="member">
-                                    <div class="member__photo">
-                                        <img src="https://picsum.photos/113/113/?random" alt="">
-                                    </div>
-                                    <div class="member__name">
-                                        <span><b>Трубаров Иван</b></span>
-                                        <span>Директор производства</span>
-                                    </div>
-                                    <ul class="member__department">
-                                        <li><span>Отдел производства:</span>
-                                            <div class="member__staff">
-                                                <img src="img/svg/user.svg" alt="">
-                                                <img src="img/svg/user.svg" alt="">
-                                                <span>+35чел.</span>
-                                            </div>
-                                        </li>
-                                        <li><span>Сервисный центр:</span>
-                                            <div class="member__staff">
-                                                <img src="img/svg/user.svg" alt="">
-                                                <img src="img/svg/user.svg" alt="">
-                                            </div>
-                                        </li>
-                                        <li><span>Отдел качества:</span>
-                                            <div class="member__staff">
-                                                <img src="img/svg/user.svg" alt="">
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            
                             <div class="col-md-6">
                                 <div class="member">
                                     <div class="member__photo">
@@ -982,5 +993,13 @@
 
         </div>
     </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/jquery.waypoints.min.js"></script>
+    <script src="js/libs/tippy.min.js"></script>
+    <script src="js/libs/rangeslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="js/template.js"></script>
 </body>
 </html>

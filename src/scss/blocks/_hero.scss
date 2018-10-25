@@ -1,8 +1,31 @@
 .hero {
-	padding: 58px 65px;
+	padding: 58px 67px;
+	// max-width: 1072px;
+	// margin-left: auto;
+	// margin-right: auto;
+
+	&__img {
+		position: relative;
+		// max-width: 756px;
+		// width: 100%;
+		width: (494 / 1005) * 100%;
+		
+		&:after {
+			content: '';
+			display: block;
+			padding-top: 58.07%;
+		}
+
+		.btn-tips {
+			position: absolute;
+		}
+	}
 }
 .hero__top {
-	padding-bottom: 47px;
+	max-width: 1005px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 33px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -23,16 +46,20 @@
 .hero__top .price {
 	margin-right: 66px;
 }
-.hero_heading {
+.hero__heading {
 	padding-bottom: 35px;
+	// padding-left: 65px;
 }
 
 .hero__middle {
 	display: flex;
 }
 .hero__col-first {
-	max-width: 620px;
+	max-width: 540px;
+	width: 100%;
 }
 .hero__col-two {
-	max-width: 520px;
+	max-width: 755px;
+	width: 100%;
 }
+

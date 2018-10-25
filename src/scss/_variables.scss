@@ -110,7 +110,7 @@ $yiq-text-light:            $white !default;
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret:              true !default;
-$enable-rounded:            true !default;
+$enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        true !default;
@@ -165,7 +165,7 @@ $body-color:                $gray-900 !default;
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+$link-color:                #005EA9 !default;
 $link-decoration:           none !default;
 $link-hover-color:          #29ABE2 !default;
 $link-hover-decoration:     none !default;
@@ -202,7 +202,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1256px
+  xl: 1170px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -260,9 +260,9 @@ $font-size-sm:                ($font-size-base * .875) !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
 $font-weight-bold:            bold !default;
-$font-weight-black:            900 !default;
+$font-weight-black:           900 !default;
 
-$font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            $font-weight-light !default;
 $line-height-base:            1.2 !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
@@ -349,7 +349,7 @@ $table-caption-color:         $text-muted !default;
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 $input-btn-padding-y:         .375rem !default;
-$input-btn-padding-x:         .75rem !default;
+$input-btn-padding-x:         1.875rem !default;
 $input-btn-line-height:       $line-height-base !default;
 
 $input-btn-focus-width:       .2rem !default;
@@ -438,7 +438,7 @@ $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               $gray-600 !default;
+$input-placeholder-color:               #4D4D4D !default;
 $input-plaintext-color:                 $body-color !default;
 
 $input-height-border:                   $input-border-width * 2 !default;

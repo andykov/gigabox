@@ -15,16 +15,17 @@
   color: $input-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  border: 0;
+  box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2), inset 4px 4px 2px -2px rgba(0, 0, 0, 0.2);
 
-  // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-  @if $enable-rounded {
-    // Manually use the if/else instead of the mixin to account for iOS override
-    border-radius: $input-border-radius;
-  } @else {
-    // Otherwise undo the iOS default
-    border-radius: 0;
-  }
+  // // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  // @if $enable-rounded {
+  //   // Manually use the if/else instead of the mixin to account for iOS override
+  //   border-radius: $input-border-radius;
+  // } @else {
+  //   // Otherwise undo the iOS default
+  //   border-radius: 0;
+  // }
 
   @include box-shadow($input-box-shadow);
   @include transition($input-transition);
@@ -40,9 +41,11 @@
 
   // Placeholder
   &::placeholder {
+    font-size: 14px;
     color: $input-placeholder-color;
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
     opacity: 1;
+    text-transform: uppercase;
   }
 
   // Disabled and read-only inputs
@@ -148,7 +151,7 @@ select.form-control {
 }
 
 .form-control-lg {
-  height: $input-height-lg;
+  // height: $input-height-lg;
   padding: $input-padding-y-lg $input-padding-x-lg;
   font-size: $font-size-lg;
   line-height: $input-line-height-lg;

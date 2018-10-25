@@ -420,7 +420,7 @@
 .tippy-roundarrow {
   width: 24px;
   height: 8px;
-  fill: #333;
+  fill: #fff;
   pointer-events: none; }
 
 .tippy-backdrop {
@@ -454,7 +454,8 @@
     opacity: 0; }
 
 .tippy-content b {
-  font-size: 18px; }
+  font-size: 18px;
+  line-height: 1.2; }
 
 @media (max-width: 360px) {
   .tippy-popper {

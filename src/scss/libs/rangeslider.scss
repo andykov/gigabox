@@ -72,6 +72,21 @@
     padding: 7px 27px;
     white-space: nowrap;
     color: #000;
+
+    &:after {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(136, 183, 213, 0);
+      border-bottom-color: #fff;
+      border-width: 0 12px 12px;
+      margin-left: -12px;
+    }
   }
 }
 .rangeslider__handle:after {
@@ -104,7 +119,8 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
 }
 .rangeslider--horizontal .rangeslider__handle {
-  top: -5px;
+  top: 50%;
+  margin-top: -13px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
 }
