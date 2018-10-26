@@ -30,7 +30,18 @@ tippy.setDefaults({
         // hideOnClick: 'toggle'
     });
 
+
+
 $(document).ready(function () {
+
+    var elementHeights = $('.business__advantage-inner').map(function() {
+        return $(this).height();
+    }).get();
+    var maxHeight = Math.max.apply(null, elementHeights);
+    $('.business__advantage-inner').height(maxHeight);
+
+
+
     var sections = $('section');
   var navigation_links = $('.menu a');
   sections.waypoint({

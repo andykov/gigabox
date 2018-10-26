@@ -342,6 +342,12 @@ input[type="button"] {
   cursor: pointer;
   box-shadow: -4px 5px 4px 0 rgba($color: #000000, $alpha: 0.3);
 
+  &.spin {
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
   &:hover {
     span {
       text-decoration: underline;
@@ -354,6 +360,9 @@ input[type="button"] {
     left: 120%;
     white-space: nowrap;
     text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
   }
   
   &:before {
@@ -373,6 +382,8 @@ input[type="button"] {
   }
 
   &--info {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.58);
+
     &:after {
       content: '';
       display: block;
@@ -419,6 +430,10 @@ input[type="button"] {
     width: 74px;
     height: 74px;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 
@@ -429,7 +444,7 @@ input[type="button"] {
   align-items: center;
 	background-color: rgba(255,255,255, 0.58);
 	box-shadow: 0 5px 4px 0 rgba(0,0,0, 0.3);
-	border-radius: 100px;
+	border-radius: 30px;
 	transform: translateY(0px);
 	transition: all 0.2s;
 	text-decoration: none;

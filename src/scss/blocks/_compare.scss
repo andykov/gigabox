@@ -1,23 +1,30 @@
 .compare {
-    // max-width: 923px;
-    margin-bottom: 55px;
+    max-width: 926px;
+    margin: 0 auto 55px;
 
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     width: 34.1333%;
-    //     background-color: #fff;
-    //     height: 100%;
-    //     top: 0;
-    //     right: 0;
-    //     z-index: -1;
-    //     box-shadow: -5px 0 5.67px rgba(63, 63, 63, 0.25);
-    // }
-    
+    &-tips {
+        position: relative;
+        background: url('../img/svg/clock.svg') no-repeat left top;
+        max-width: 815px;
+        padding-left: 74px;
+        font-size: 14px;
+        min-height: 57px;
+        padding: 5px 260px 5px 74px;
+        margin-bottom: 135px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            background: url('../img/svg/arrow-curve-rb.svg') no-repeat;
+            background-size: contain;
+            max-width: 215px;
+            width: 100%;
+            height: 148px;
+        }
+    }
 
     &__head {
-        
-
         @include media-breakpoint-up(sm) {
             display: flex;
         }
