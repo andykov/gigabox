@@ -31,7 +31,27 @@ tippy.setDefaults({
     });
 
 $(document).ready(function () {
-    
+    var sections = $('section');
+  var navigation_links = $('.menu a');
+  sections.waypoint({
+    handler: function(event, direction) {
+        console.log(this);
+        var active_section;
+        active_section = $(this);
+        // console.log(navigation_links);
+        // active_section.attr("id")
+        var id = active_section.attr("id");
+        if (typeof id !== typeof undefined && id !== false) {
+            console.log(id);
+        }
+        
+        if (direction === "up") active_section = active_section.prev();
+        var active_link = $('.menu a[href="#' + active_section.attr("id") + '"]');
+        navigation_links.removeClass("is-active");
+        active_link.addClass("is-active");
+    },
+    offset: '35%'
+  });
     // var waypoints = $('.tips-2').waypoint({
     //     handler: function(direction) {
     //         notify(this.element.id + ' hit')
@@ -100,8 +120,8 @@ $(document).ready(function () {
     headerPoint.waypoint({
         handler: function(direction) {
             if (direction === 'down') {
-                console.clear();
-                console.log();
+                // console.clear();
+                // console.log();
                 $(this.element).find('.cylinder').addClass('is-up');
                 // console.log($(this));
                 // console.log($(this).find($('.cylinder')));
@@ -125,10 +145,6 @@ $(document).ready(function () {
         offset: 'bottom-in-view'
     });
 
-
-    // regions-desc--one
-
-
     function cilinder() {
         $('.cilinder-lines svg').attr('viewBox', "0 0 " + $('.cilinder-lines').width() + " " + $('.cilinder-lines').height());
 
@@ -138,6 +154,7 @@ $(document).ready(function () {
             var spanLeft = cylinder.position().left;
             var spanWidth = cylinder.width();
             var spanHeight = cylinder.height();
+            // console.log(cylinder);
 
 
             if ($(this).next().length) {
@@ -146,7 +163,7 @@ $(document).ready(function () {
                 var spanLeftNext = cylinderNext.position().left;
                 var spanWidthNext = cylinderNext.width();
                 var spanHeightNext = cylinderNext.height();
-
+                // console.log($('.cilinder-lines svg line'));
                 $('.cilinder-lines svg line').eq(i).attr({
                     'x1': spanLeft + (spanWidth / 2),
                     'y1': spanTop + (spanHeight / 2),
@@ -179,8 +196,8 @@ $(document).ready(function () {
     });
 
     // range price
-
     $('.input-range output').text($('.input-range input[type="range"]').val());
+
     $('input[type="range"]').rangeslider({
         polyfill: false,
         onInit: function () {
@@ -219,4 +236,35 @@ $(document).ready(function () {
             }
         }
     });
+
+    // services dropdown
+    $('.services__inner').on('click', function(){
+        $(this).parent().toggleClass('is-open');
+    });
+
+    // popup video
+    $('[data-fancybox]').fancybox({
+        youtube : {
+            controls : 0,
+            showinfo : 0
+        }
+    });
+
+
+
+
+    
 });
+
+
+
+
+// navigation_links.click( function(event) {
+//     $.scrollTo(
+//       $(this).attr("href"),
+//       {
+//         duration: 200,
+//         offset: { 'left':0, 'top':-0.15*$(window).height() }
+//       }
+//     );
+//   });

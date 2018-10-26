@@ -12,9 +12,9 @@ h1, h2, h3, h4, h5, h6,
   line-height: $headings-line-height;
   color: $headings-color;
 
-  span {
-    display: block;
-    color: #005EA9;
+  .text-primary {
+    // display: block;
+    // color: #005EA9;
     font-weight: $font-weight-black;
   }
 }

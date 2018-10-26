@@ -7,6 +7,7 @@
     <title>GigaBox</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="css/libs/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/libs/tippy/tippy.css">
     <link rel="stylesheet" href="css/libs/rangeslider.css">
     <link rel="stylesheet" href="css/template.css">
@@ -21,7 +22,7 @@
             <span class="btn-menu__label"></span>
         </button>
         <ul class="menu__list">
-            <li><a href="#"><span>Характеристики</span></a></li>
+            <li><a href="#property"><span>Характеристики</span></a></li>
             <li><a href="#advantage" class="is-active"><span>Преимущества</span></a></li>
             <li><a href="#price"><span>Цены</span></a></li>
             <li><a href="#services"><span>Для бизнеса</span></a></li>
@@ -29,7 +30,7 @@
             <li><a href="#steps"><span>Этапы сделки</span></a></li>
             <li><a href="#contacts"><span>Контакты</span></a></li>
             <li class="menu__phone">
-                <a href="#">
+                <a href="tel:+78005511983">
                     <span class="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="11px" height="11px" viewBox="0 0 19.85 19.56"><g><path fill="#333333" d="M19.39 13.13s-2-1-3.29-1.63c-1.44-.73-3.13.63-3.92 1.41a10 10 0 0 1-3.32-2.08 9.78 9.78 0 0 1-2.11-3.27c.79-.79 2.17-2.45 1.43-3.86C7.53 2.45 6.53.45 6.53.45A.82.82 0 0 0 5.79 0H4.14A4.94 4.94 0 0 0 0 4.89c0 2.56 3.11 7.48 5.21 9.54s7.08 5.13 9.68 5.13a5 5 0 0 0 5-4.07v-1.63a.79.79 0 0 0-.5-.73z"/></g></svg>
                     </span>
@@ -38,7 +39,7 @@
             </li>
         </ul>
     </div>
-    <section class="section">
+    <section id="hero" class="section">
 		<div class="container">
 			<div class="hero">
 				<div class="hero__top">
@@ -86,7 +87,7 @@
 			</div>
 		</div>
 	</section>
-    <section class="section section--property">
+    <section id="property" class="section section--property">
         <div class="container">
      
             <div class="property">
@@ -129,13 +130,12 @@
                     <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 72.4%; top: 38%;" data-tippy="<b>tips-7</b>"></button>
                     <button type="button" class="btn-tips btn-tips--info btn-tips--blue spin pulse" style="left: 70.4%; top: 59%;" data-tippy="<b>tips-8</b>"></button>
                 </div>
-                
             </div>
         </div>
     </section>
-    <section class="section section--request">
+    <section id="request" class="section section--request">
         <div class="container">
-            <div class="container-narow">
+            <div class="container__inner">
                 <div class="section__head"><h2>Долго разбираться?</h2></div>
                 
                 <div class="row">
@@ -279,7 +279,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> 20-футов</h3></div>
+                        <div class="product__title"><h3><span class="text-primary">GigaBox</span> 20-футов</h3></div>
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
@@ -303,7 +303,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> 40-футов</h3></div>
+                        <div class="product__title"><h3><span class="text-primary">GigaBox</span> 40-футов</h3></div>
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
@@ -328,7 +328,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> под GPU</h3></div>
+                        <div class="product__title"><h3><span class="text-primary">GigaBox</span> под GPU</h3></div>
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
@@ -352,7 +352,7 @@
 
                             </div>
                         </div>
-                        <div class="product__title"><h3><span class="d-inline">GigaBox</span> под заказ</h3></div>
+                        <div class="product__title"><h3><span class="text-primary">GigaBox</span> под заказ</h3></div>
                         <div class="product__price">
                             <a href="#" class="btn-special btn-special--price">
                                 <span class="icon icon--blue"><img src="img/svg/rub.svg" alt=""></span>
@@ -371,15 +371,17 @@
         <div class="container">
             <div class="section__head text-center">
                 <h2>
-                    <span class="text-uppercase">Превратите расход в доход</span>
+                    <span class="d-block text-primary text-uppercase">Превратите расход в доход</span>
+                    <!-- <span class="font-weight-block"></span> -->
                     Выгодные решения для бизнеса
                 </h2>
                 <p>Получите еще больше пользы от майнинга — используйте выделяемое тепло для дополнительного заработка.</p>
             </div>
             <div class="services">
                 <div class="services__row">
-                        <div class="services__item">
-                            <a href="#" class="services__link">
+                    <div class="services__item">
+                        <div class="services__cont">
+                            <div class="services__inner">
                                 <div class="services__icon">
                                     <img src="img/svg/icon_sol-1.svg" alt="">
                                 </div>
@@ -387,123 +389,222 @@
                                     Изготовления контейнера под отопление нижних нежилых помещений <br>
                                     <span>— доступно для заказа</span>
                                 </div>
-                            </a>
+                            </div>
+                            <div class="services__form">
+                                <form action="" method="post">
+                                    <div class="services__form-title">
+                                        Мы гарантируем честность и открытость
+                                    </div>
+                                    <div class="form-row">
+                                        <input class="form-control" type="text" name="tel_code" value="+7">
+                                        <input class="form-control" type="tel" name="tel_number" value="" autocomplete="off" placeholder="номер телефона" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" required="">
+                                            <label class="form-check-label" for="invalidCheck">
+                                                Даю согласие на обработку <a href="#">персональных данных</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn">
+                                        <span class="btn-blick">Обсудить детали</span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
-                  
-                        <div class="services__item">
-                            <a href="#" class="services__link">
-                                <div class="services__icon">
-                                        <img src="img/svg/icon_sol-2.svg" alt="">
-                                </div>
-                                <div class="services__text">
-                                    Изготовление контейнера для обогрева покрасочной камеры <br>
-                                    <span>— доступно для заказа</span>
-                                </div>
-                            </a>
+                    </div>
+                    <div class="services__item">
+                        <div class="services__cont">
+                                    <div class="services__inner">
+                                        <div class="services__icon">
+                                            <img src="img/svg/icon_sol-2.svg" alt="">
+                                        </div>
+                                        <div class="services__text">
+                                            Изготовление контейнера для обогрева покрасочной камеры <br>
+                                            <span>— доступно для заказа</span>
+                                        </div>
+                                    </div>
+                                    <div class="services__form">
+                                        <form action="" method="post">
+                                            <div class="services__form-title">
+                                                Мы гарантируем честность и открытость
+                                            </div>
+                                            <div class="form-row">
+                                                <input class="form-control" type="text" name="tel_code" value="+7">
+                                                <input class="form-control" type="tel" name="tel_number" value="" autocomplete="off" placeholder="номер телефона" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" required="">
+                                                    <label class="form-check-label" for="invalidCheck">
+                                                        Даю согласие на обработку <a href="#">персональных данных</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn">
+                                                <span class="btn-blick">Обсудить детали</span>
+                                            </button>
+                                        </form>
+                                    </div>
                         </div>
-          
-                        <div class="services__item">
-                            <a href="#" class="services__link">
-                                <div class="services__icon">
-                                        <img src="img/svg/icon_sol-3.svg" alt="">
+                    </div>
+                            <div class="services__item">
+                                <div class="services__cont">
+                                    <div class="services__inner">
+                                        <div class="services__icon">
+                                            <img src="img/svg/icon_sol-3.svg" alt="">
+                                        </div>
+                                        <div class="services__text">
+                                            Изготовление контейнера для обогрева сушильной камеры для дерева <br>
+                                            <span>— доступно для заказа</span>
+                                        </div>
+                                    </div>
+                                    <div class="services__form">
+                                        <form action="" method="post">
+                                            <div class="services__form-title">
+                                                Мы гарантируем честность и открытость
+                                            </div>
+                                            <div class="form-row">
+                                                <input class="form-control" type="text" name="tel_code" value="+7">
+                                                <input class="form-control" type="tel" name="tel_number" value="" autocomplete="off" placeholder="номер телефона" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" required="">
+                                                    <label class="form-check-label" for="invalidCheck">
+                                                        Даю согласие на обработку <a href="#">персональных данных</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn">
+                                                <span class="btn-blick">Обсудить детали</span>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                                <div class="services__text">
-                                    Изготовление контейнера для обогрева сушильной камеры для дерева <br>
-                                    <span>— доступно для заказа</span>
+                            </div>
+                            <div class="services__item">
+                                <div class="services__cont">
+                                    <div class="services__inner">
+                                        <div class="services__icon">
+                                            <img src="img/svg/icon_sol-4.svg" alt="">
+                                        </div>
+                                        <div class="services__text">
+                                            Изготовление контейнера для обогрева частного бассейна <br>
+                                            <span>— доступно для заказа</span>
+                                        </div>
+                                    </div>
+                                    <div class="services__form">
+                                        <form action="" method="post">
+                                            <div class="services__form-title">
+                                                Мы гарантируем честность и открытость
+                                            </div>
+                                            <div class="form-row">
+                                                <input class="form-control" type="text" name="tel_code" value="+7">
+                                                <input class="form-control" type="tel" name="tel_number" value="" autocomplete="off" placeholder="номер телефона" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" required="">
+                                                    <label class="form-check-label" for="invalidCheck">
+                                                        Даю согласие на обработку <a href="#">персональных данных</a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn">
+                                                <span class="btn-blick">Обсудить детали</span>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
-              
-                        <div class="services__item">
-                            <a href="#" class="services__link">
-                                <div class="services__icon">
-                                        <img src="img/svg/icon_sol-4.svg" alt="">
-                                </div>
-                                <div class="services__text">
-                                    Изготовление контейнера для обогрева частного бассейна <br>
-                                    <span>— доступно для заказа</span>
-                                </div>
-                            </a>
-                        </div>
-           
+                            </div>
                 </div>
             </div>
         </div>
     </section>
     <section id="advantage" class="section section--business">
         <div class="container">
-            <div class="business">
-                <div class="section__head">
-                    <h2><span>Готовый арендный бизнес</span> с доходностью от 200 000 рублей в месяц.</h2>
-                    <div class="h2">Купите мобильный дата-центр GigaBOX и получайте пассивный доход на сдаче в аренду мест под майнинг.</div>
-                </div>
-                <div class="business__row justify-content-md-center">
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>Пассивный доход от 200 000 руб. с минимальным участием собственника</span></div>
+            <div class="container__inner">
+                <div class="business">
+                    <div class="section__head">
+                        <h2><span class="d-block text-primary">Готовый арендный бизнес</span> с доходностью от 200 000 рублей в месяц.</h2>
+                        <div class="h2 font-weight-light">Купите мобильный дата-центр GigaBOX и получайте пассивный доход на сдаче в аренду мест под майнинг.</div>
                     </div>
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>Возможность регулировать свой доход <small>(Чем ниже тариф на электричество, тем выше Ваш заработок)</small></span></div>
-                    </div>
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>Всего 1-2 сотрудника для функционирования бизнеса</span></div>
-                    </div>
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>10-ти кратный рост спроса на размещение за 2018 г. <small>(по данным аналитики Яндекса)</small></span></div>
-                    </div>
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>Менее 28 дней на запуск</span></div>
-                    </div>
-                    <div class="business__advantage">
-                        <div class="business__advantage-inner"><span>Содействие в наполнении дата-центра от компании 1GHS</span></div>
-                    </div>
-                </div>
-                <div class="business__form">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2>Заполни анкету партнера прямо сейчас</h2>
+                    <div class="business__row justify-content-md-center">
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>Пассивный доход от 200 000 руб. с минимальным участием собственника</span></div>
                         </div>
-                        <div class="col-md-6">
-                            <div>Заполните анкету и получите персональный финансовый план окупаемости для Вашего города</div>
-                            <form action="">
-                                <div class="form-row">
-                                    <div class="form-row">
-                                        <div class="form-group col">
-                                            <input type="text" class="form-control" id="" placeholder="Введите имя">
-                                        </div>
-                                        <div class="form-group col">
-                                            <input type="text" class="form-control" id="" placeholder="Номер телефона">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col">
-                                            <input type="text" class="form-control" id="" placeholder="E-mail">
-                                        </div>
-                                        <div class="form-group col">
-                                            <input type="text" class="form-control" id="" placeholder="Город">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="input-range">
-                                            <span class="input-range__label">Бюджет</span>
-                                            <input
-                                                type="range"
-                                                min="100000"
-                                                max="1000000"
-                                                step="100000"
-                                                value="700000">
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn">
-                                            <span class="btn-blick">Получить фин.план</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>Возможность регулировать свой доход <small>(Чем ниже тариф на электричество, тем выше Ваш заработок)</small></span></div>
                         </div>
-                        
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>Всего 1-2 сотрудника для функционирования бизнеса</span></div>
+                        </div>
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>10-ти кратный рост спроса на размещение за 2018 г. <small>(по данным аналитики Яндекса)</small></span></div>
+                        </div>
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>Менее 28 дней на запуск</span></div>
+                        </div>
+                        <div class="business__advantage">
+                            <div class="business__advantage-inner"><span>Содействие в наполнении дата-центра от компании 1GHS</span></div>
+                        </div>
+                    </div>
+                    <div class="business__form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Заполни анкету партнера прямо сейчас</h2>
+                                <!-- <img src="img/content/jurnal.png" alt=""> -->
+                                <img src="img/svg/jurnal.svg" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <div>Заполните анкету и получите персональный финансовый план окупаемости для Вашего города</div>
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-row">
+                                            <div class="form-group col">
+                                                <input type="text" class="form-control" id="" placeholder="Введите имя">
+                                            </div>
+                                            <div class="form-group col">
+                                                <input type="text" class="form-control" id="" placeholder="Номер телефона">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col">
+                                                <input type="text" class="form-control" id="" placeholder="E-mail">
+                                            </div>
+                                            <div class="form-group col">
+                                                <input type="text" class="form-control" id="" placeholder="Город">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <div class="form-row">
+                                                <div class="col-3">Бюджет</div>
+                                                <div class="col-9 input-range">
+                                                    <!-- <span class="input-range__label"></span> -->
+                                                    <input
+                                                        type="range"
+                                                        min="100000"
+                                                        max="1000000"
+                                                        step="100000"
+                                                        value="700000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="col-auto">
+                                            <button type="submit" class="btn">
+                                                <span class="btn-blick">Получить фин.план</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -511,187 +612,198 @@
     </section>
     <section id="steps" class="section section--steps bg">
         <div class="container">
-            <div class="section__head">
-                <h2>Как мы работаем</h2>
-            </div>
-            <div class="steps">
-                <div class="cilinder-lines">
-                    <svg class="logo" width="100%" height="100%" viewBox="0 0 500 448">
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                        <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
-                    </svg>
+            <div class="container__inner">
+                <div class="section__head">
+                    <h2><span class="text-primary">Как мы работаем</span></h2>
                 </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Заявка или звонок</div>
-                        <div class="steps__desc">Вы оставляете заявку или звоните по телефону</div>
+                <div class="steps">
+                    <div class="cilinder-lines">
+                        <svg width="100%" height="100%" viewBox="0 0 500 448">
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                            <line x1="10" y1="10" x2="100" y2="10" stroke="#E5ECF3" stroke-width="10"></line>
+                        </svg>
                     </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Заявка или звонок</div>
+                            <div class="steps__desc">Вы оставляете заявку или звоните по телефону</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/001-phone-call.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Отправляем коммерческое предложение,</div>
+                            <div class="steps__desc">а также дополнительные материалы для ознакомления с нашей продукцией</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/002-docs.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Конференция</div>
+                            <div class="steps__desc">После ознакомления организовываем конференцию с нашим техническим директором для уточнения технических вопросов</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/002-docs.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Встреча</div>
+                            <div class="steps__desc">Встречаемся с Вами в офисе или на производстве</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/003-food.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Сделка</div>
+                            <div class="steps__desc">Подписание договора и оплата</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/004-handshake.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Отгрузка</div>
+                            <div class="steps__desc">Отгрузка с производства и подписание акта</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/005-clipboard.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Логистика</div>
+                            <div class="steps__desc">Организовываем логистику до Вашей площадки</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/006-shipped.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps__item">
+                        <div class="steps__text">
+                            <div class="steps__title">Помощь</div>
+                            <div class="steps__desc">Помощь в установке и подключении</div>
+                        </div>
+                        <div class="steps__step">
+                            <div class="steps__icon"><img src="img/svg/007-question.svg" alt=""></div>
+                            <div class="cylinder">
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Отправляем коммерческое предложение,</div>
-                        <div class="steps__desc">а также дополнительные материалы для ознакомления с нашей продукцией</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
+                <div class="regions">
+                    <div class="regions__map">
+                        <img src="img/svg/map-all.svg" alt="">
+                        <div class="markers">
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>Офис:</b></br> Санкт-Петербург </br><a href=#>Записаться на встречу</a>" style="top: 56%; left: 10%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 2</b>" style="top: 64.7%; left: 13.3%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 3</b>" style="top: 61.7%; left: 14%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 4</b>"style="top: 62.7%; left: 14.6%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 5</b>"style="top: 63%; left: 19.3%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 6</b>" style="top: 81%; left: 15.3%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 7</b>" style="top: 88%; left: 22%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>Кемерово</b></br>Площадоки: 2</br>Контейнеры: 9 </br><a href=#>Узнать условия</a>" style="top: 55%; left: 54%;"></span>
+                            <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 9</b>" style="top: 48%; left: 64%;"></span>
                         </div>
-                    </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Конференция</div>
-                        <div class="steps__desc">После ознакомления организовываем конференцию с нашим техническим директором для уточнения технических вопросов</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
+                        <div class="regions-desc regions-desc--one" data-height="341" style="height: 0">
+                            <span>Наши мобильные дата-центры размещены по всей России и странам СНГ. Создано уже более 20 работающих площадок, около 10 находятся на стадии разработки</span>
                         </div>
+                        <div class="regions-desc regions-desc--two" data-height="400" style="height: 0">
+                            <span><b>Представительство в Китае</b> Наши офисы находятся не только в Москве и Санкт-Петербурге, но и в городе Шэньчжэнь. </span>
+                        </div>   
                     </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Встреча</div>
-                        <div class="steps__desc">Встречаемся с Вами в офисе или на производстве</div>
+                    <div class="regions__info">
+                        Вы можете связаться с нашими клиентами напрямую и убедиться в качестве нашей продукции. Для этого позвоните по специальному номеру: <a href="tel:+79819336482">8 (981) 933-64-82</a> и назовите свой город. Специалист проверит наличие клиентов и партнеров в Вашем городе, которые готовы показать свои дата-центры, и предоставит контакты для связи с ними.
                     </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Сделка</div>
-                        <div class="steps__desc">Подписание договора и оплата</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Отгрузка</div>
-                        <div class="steps__desc">Отгрузка с производства и подписание акта</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Логистика</div>
-                        <div class="steps__desc">Организовываем логистику до Вашей площадки</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="steps__item">
-                    <div class="steps__text">
-                        <div class="steps__title">Помощь</div>
-                        <div class="steps__desc">Помощь в установке и подключении</div>
-                    </div>
-                    <div class="steps__step">
-                        <div class="cylinder">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="regions">
-                <div class="regions__map">
-                    <img src="img/svg/map-all.svg" alt="">
-                    <div class="markers">
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>Офис:</b></br> Санкт-Петербург </br><a href=#>Записаться на встречу</a>" style="top: 56%; left: 10%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 2</b>" style="top: 64.7%; left: 13.3%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 3</b>" style="top: 61.7%; left: 14%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 4</b>"style="top: 62.7%; left: 14.6%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 5</b>"style="top: 63%; left: 19.3%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 6</b>" style="top: 81%; left: 15.3%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 7</b>" style="top: 88%; left: 22%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>Кемерово</b></br>Площадоки: 2</br>Контейнеры: 9 </br><a href=#>Узнать условия</a>" style="top: 55%; left: 54%;"></span>
-                        <span class="markers__item" data-tippy-interactive="true" data-tippy="<b>marker 9</b>" style="top: 48%; left: 64%;"></span>
-                    </div>
-                    <div class="regions-desc regions-desc--one" data-height="341" style="height: 0">
-                        <span>Наши мобильные дата-центры размещены по всей России и странам СНГ. Создано уже более 20 работающих площадок, около 10 находятся на стадии разработки</span>
-                    </div>
-                    <div class="regions-desc regions-desc--two" data-height="400" style="height: 0">
-                        <span><b>Представительство в Китае</b> Наши офисы находятся не только в Москве и Санкт-Петербурге, но и в городе Шэньчжэнь. </span>
-                    </div>   
-                </div>
-                <div class="regions__info">
-                    Вы можете связаться с нашими клиентами напрямую и убедиться в качестве нашей продукции. Для этого позвоните по специальному номеру: <a href="tel:+79819336482">8 (981) 933-64-82</a> и назовите свой город. Специалист проверит наличие клиентов и партнеров в Вашем городе, которые готовы показать свои дата-центры, и предоставит контакты для связи с ними.
                 </div>
             </div>
         </div>
     </section>
-    <section class="bg">
-        <section id="video" class="section section--video">
+    <section id="video" class="section section--video">
             <div class="container">
-                <div class="section__head">
-                    <h2><span class="d-inline">1GHS</span> публичная компания</h2>
-                    <p>Чтобы убедиться в том, что мы настоящая компания, посмотрите наши видео-материалы и <a href="javascript:void(0)">запишитесь на экскурсию по производству</a></p>
-                </div>
-                <div class="video-list">
-                    <div class="row">
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <a href="" class="video-list__item">
-                                <img src="https://picsum.photos/196/115/?random" alt="">
-                            </a>
+                <div class="container__inner">
+                    <div class="section__head">
+                        <h2><span class="text-primary">1GHS</span> <span class="font-weight-black">публичная компания</span></h2>
+                        <p>Чтобы убедиться в том, что мы настоящая компания, посмотрите <br> наши видео-материалы и <a href="javascript:void(0)">запишитесь на экскурсию по производству</a></p>
+                    </div>
+                    <div class="video-list">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=viNydbDOGkg" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/viNydbDOGkg/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=d2XCGIkuE14" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/d2XCGIkuE14/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=viNydbDOGkg" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/viNydbDOGkg/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=d2XCGIkuE14" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/d2XCGIkuE14/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=viNydbDOGkg" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/viNydbDOGkg/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=d2XCGIkuE14" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/d2XCGIkuE14/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <a data-fancybox href="https://www.youtube.com/watch?v=yWK9HeQGp0w" class="video-list__item">
+                                    <img src="http://i.ytimg.com/vi/yWK9HeQGp0w/hqdefault.jpg" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <div class="text-center">
+                        <a href="#" class="btn">Записаться на экскурсию</a>
+                    </div>
+                    <p>Компания 1GHS работает на рынке продажи оборудования для майнинга с 2016 года. В 2018 году мы запустили собственное производство мобильных дата-центров GigaBOX и за пол года наш продукт стал одним из самых востребованных на рынке хостинга и мобильных дата-центров.</p>
                 </div>
-                <div class="text-center">
-                    <a href="#" class="btn">Записаться на экскурсию</a>
-                </div>
-                <p>Компания 1GHS работает на рынке продажи оборудования для майнинга с 2016 года. В 2018 году мы запустили собственное производство мобильных дата-центров GigaBOX и за пол года наш продукт стал одним из самых востребованных на рынке хостинга и мобильных дата-центров.</p>
             </div>
         </section>
         <section class="section section--team">
@@ -913,9 +1025,7 @@
                 </div>
             </div>
         </section>
-    </section>
-
-    <section class="section section--faq">
+    <section id="faq" class="section section--faq">
         <div class="container">
             <div class="rakib">
                 <div class="row">
@@ -997,9 +1107,10 @@
     <!-- SCRIPTS -->
     <script src="js/libs/jquery-3.3.1.min.js"></script>
     <script src="js/libs/jquery.waypoints.min.js"></script>
-    <script src="js/libs/tippy.min.js"></script>
     <script src="js/libs/rangeslider.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
+    <script src="js/libs/tippy.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script> -->
     <script src="js/template.js"></script>
 </body>
 </html>
