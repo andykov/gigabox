@@ -10,25 +10,19 @@
 
 
 
-
-
-// function tipShow(){
-//     hintsProperty.forEach(function(item, i, arr) {
-//             item._tippy.show('slow');
-//         });
-// }
-
 tippy.setDefaults({
-        arrow: true,
-        arrowType: 'round',
-        arrowTransform: 'scale(1.9)',
-        duration: 200,
-        inertia: true,
-        flip: false,
-        offset: '0, 28',
-        trigger: 'mouseenter click'
-        // hideOnClick: 'toggle'
-    });
+    interactive: true,
+    // interactiveBorder: 28,
+    arrow: true,
+    arrowType: 'round',
+    arrowTransform: 'scale(1.9)',
+    duration: 200,
+    inertia: true,
+    flip: false,
+    // offset: '0, 28',
+    trigger: 'mouseenter click'
+    // hideOnClick: 'toggle'
+});
 
 
 
@@ -161,6 +155,19 @@ $(document).ready(function () {
         },
         offset: '80%'
     });
+
+    var stepItem = $("#property");
+
+    stepItem.waypoint({
+        handler: function(direction) {
+            if (direction === 'down') {
+                $('.btn-menu, .menu__list').addClass('is-active');
+            }
+        },
+        offset: '20%'
+    });
+
+    
 
     // stepItem.waypoint({
     //     handler: function(direction) {

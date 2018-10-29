@@ -5,7 +5,8 @@
 //
 @keyframes blick {
   0% {
-    left: -20%;
+    // transform: skewX(-22deg) translate(-2%);
+    left: -10%;
   }
   60% {
     opacity: 1;
@@ -15,7 +16,8 @@
   }
   100% {
     opacity: 0;
-    left: 110%;
+    // transform: skewX(-22deg) translate(102%);
+    left: 102%;
   }
 }
 .btn {
@@ -111,16 +113,18 @@
     align-items: center;
     border-radius: 3px 0 3px 3px;
     overflow: hidden;
+    position: relative;
 
     &:before {
       content: '';
       position: absolute;
-      top: -50%;
-      bottom: -50%;
+      top: -5px;
+      bottom: -5px;
+      left: 0;
       background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6) 100%);
       width: 45px;
       transform: skewX(-22deg);
-      left: -65%;
+      
       animation-name: blick;
       animation-duration: 3s;
       animation-iteration-count: infinite;
@@ -159,6 +163,8 @@
       }
     }
   }
+
+  
 
   &-bounce {
     transition:.25s;
@@ -217,6 +223,36 @@
     &:focus {
       @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
     }
+  }
+}
+
+.btn-stock {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  font-size: 18px;
+  background : linear-gradient(90deg, rgba(18, 122, 203, 1) 0%, rgba(33, 146, 234, 1) 100%);
+  box-shadow: -13px 14px 13px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  color: #fff;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    background-size: 20px 28px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 9px rgba(255, 255, 255, 0.58);
+    border-radius: 100%;
   }
 }
 

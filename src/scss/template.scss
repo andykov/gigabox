@@ -407,8 +407,8 @@ body {
         line-height: 1.2;
         color: #fff;
         padding: 37.5px 50px 37.5px 15px;
-        // height: 100%;
         z-index: 1;
+        cursor: pointer;
 
         &:after {
             content: '';
@@ -794,8 +794,13 @@ body {
             width: 50%;
             background: radial-gradient(ellipse at center, rgba(63, 63, 63, 0.3) 0%, rgba(63, 63, 63, 0) 60%);
             height: (100% / 3.5);
-            filter: blur(2px)
+            filter: blur(2px);
+        }
 
+        .btn-stock {
+            position: absolute;
+            left: 47%;
+            top: -32px;
         }
     }
 
@@ -1193,6 +1198,9 @@ body {
 }
 
 .section {
+    &--hero {
+        padding-bottom: 10%;
+    }
     &--product {
         padding-top: 6.5%;
     }
@@ -1200,6 +1208,7 @@ body {
         padding-bottom: 2.5%;
     }
     &--request {
+        padding-top: 2.5%;
         padding-bottom: 34px;
     }
     &--steps {
