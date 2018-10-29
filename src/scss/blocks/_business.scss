@@ -1,0 +1,96 @@
+.business {
+    position: relative;
+    border-radius: 4px;
+    
+    padding: 96px 0;
+    counter-reset: number;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        right: -15px;
+        top: 0;
+        bottom: 0;
+        border: 2px dashed #ccc;
+        z-index: -1;
+
+        @include media-breakpoint-up(xl) {
+            left: -(96 / 1005) * 100%;
+            right: -(96 / 1005) * 100%;
+        }
+    }
+
+    &__row {
+        @include make-row();
+    }
+
+    &__advantage {
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+            @include make-col(6);
+        }
+        margin-bottom: 35px;
+
+        &-inner {
+            background-color: #fff;
+            padding: 22px 20px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.2;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            box-shadow: 0 -4px 7px 0 rgba(63, 63, 63, 0.33);
+
+            small {
+                font-size: 14px;
+            }
+
+            &:before {
+                counter-increment: number;
+                content: "0"counter(number);
+                font-size: 50px;
+                line-height: 1;
+                padding: 0 30px 0 10px;
+                color: #005EA9;
+            }
+        }
+    }
+
+    &__form {
+        padding-top: 40px;
+
+        &-img {
+            position: relative;
+            padding-top: 10px;
+            padding-left: 35px;
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 3px;
+                left: 17px;
+                width: 50%;
+                height: 80%;
+                background: linear-gradient(-45deg, rgba(130,130,130,0.65) 60%,rgba(21,21,21,0) 84%,rgba(0,0,0,0) 100%);
+                filter: blur(5px);
+                transform: skewX(18deg) skewY(-2deg);
+                z-index: -1;
+            }
+        }
+
+        &-text {
+            padding-top: 4px;
+            padding-bottom: 55px;
+        }
+
+        form {
+            .form-control {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    
+}

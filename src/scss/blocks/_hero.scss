@@ -98,20 +98,32 @@
 }
 .hero__heading {
 	padding-bottom: 35px;
-	padding-left: 67.5px;
+	
+	@include media-breakpoint-up(md) {
+		padding-left: 67.5px;
+	}
 }
 
 .hero__middle {
-	display: flex;
+	
+	@include media-breakpoint-up(md) {
+		display: flex;
+	}
 }
 .hero__col-first {
 	// max-width: 520px;
 	// width: 100%;
-	width: (585 / 1140) * 100%;
+	
+	@include media-breakpoint-up(md) {
+		width: (585 / 1140) * 100%;
+	}
 }
 .hero__col-two {
 	// max-width: 755px;
 	// width: 100%;
-	width: (555 / 1140) * 100%;
+	
+	@include media-breakpoint-up(md) {
+		width: (555 / 1140) * 100%;
+	}
 }
 

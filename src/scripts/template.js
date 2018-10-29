@@ -40,29 +40,40 @@ $(document).ready(function () {
     var maxHeight = Math.max.apply(null, elementHeights);
     $('.business__advantage-inner').height(maxHeight);
 
+    var servicesHeights = $('.services__inner').map(function() {
+        return $(this).height();
+    }).get();
+    var maxHeight = Math.max.apply(null, servicesHeights);
+    $('.services__inner').height(maxHeight);
 
 
-    var sections = $('section');
-  var navigation_links = $('.menu a');
-  sections.waypoint({
-    handler: function(event, direction) {
-        console.log(this);
-        var active_section;
-        active_section = $(this);
-        // console.log(navigation_links);
-        // active_section.attr("id")
-        var id = active_section.attr("id");
-        if (typeof id !== typeof undefined && id !== false) {
-            console.log(id);
-        }
-        
-        if (direction === "up") active_section = active_section.prev();
-        var active_link = $('.menu a[href="#' + active_section.attr("id") + '"]');
-        navigation_links.removeClass("is-active");
-        active_link.addClass("is-active");
-    },
-    offset: '35%'
-  });
+
+    // menu
+    // var sections = $('.section');
+    // var navigation_links = $('.menu a');
+    // sections.waypoint({
+    //     handler: function(event, direction) {
+    //         // console.log(this);
+    //         var active_section;
+    //         active_section = $(this);
+    //         // console.log(navigation_links);
+    //         // active_section.attr("id")
+    //         var id = active_section.attr("id");
+    //         if (typeof id !== typeof undefined && id !== false) {
+    //             // console.log(id);
+    //         }
+            
+    //         if (direction === "up") active_section = active_section.prev();
+    //         var active_link = $('.menu a[href="#' + active_section.attr("id") + '"]');
+    //         navigation_links.removeClass("is-active");
+    //         active_link.addClass("is-active");
+    //     },
+    //     offset: '35%'
+    // });
+
+
+
+
     // var waypoints = $('.tips-2').waypoint({
     //     handler: function(direction) {
     //         notify(this.element.id + ' hit')
@@ -101,8 +112,11 @@ $(document).ready(function () {
     var waypoint2 = new Waypoint({
         element: document.querySelector('.regions__map'),
         handler: function (direction) {
-            var h = $('.regions-desc').attr('data-height');
-            $('.regions-desc').height(h).find('span').css('opacity', 1);
+            $('.regions-desc').each(function(){
+                var h = $(this).attr('data-height');
+                $(this).height(h).find('span').css('opacity', 1);
+            });
+            
 
             this.destroy();
         },
@@ -126,14 +140,19 @@ $(document).ready(function () {
     //     offset: '80%'
     // });
 
-    var headerPoint = $(".steps__item");
+    var stepItem = $(".steps__item");
 
-    headerPoint.waypoint({
+    stepItem.waypoint({
         handler: function(direction) {
             if (direction === 'down') {
                 // console.clear();
-                // console.log();
-                $(this.element).find('.cylinder').addClass('is-up');
+                console.log($(this.element).index());
+                $(this.element).addClass('show');
+                if ($(this.element).index() >= 1) {
+                    $(this.element).closest('.steps').find('.cilinder-lines svg line').eq($(this.element).index() - 1).addClass('show');
+                }
+                
+                
                 // console.log($(this));
                 // console.log($(this).find($('.cylinder')));
             // var title = this.element.getAttribute("data-title");
@@ -143,38 +162,40 @@ $(document).ready(function () {
         offset: '80%'
     });
 
-    headerPoint.waypoint({
-        handler: function(direction) {
-            if (direction === 'up') {
-            // var title = this.element.getAttribute("data-title");
-            // $("#header").text(title);
+    // stepItem.waypoint({
+    //     handler: function(direction) {
+    //         if (direction === 'up') {
+    //         // var title = this.element.getAttribute("data-title");
+    //         // $("#header").text(title);
 
-            //console.log($(window).height());
-            //console.log(this.element.clientHeight);
-            }
-        },
-        offset: 'bottom-in-view'
-    });
+    //         //console.log($(window).height());
+    //         //console.log(this.element.clientHeight);
+    //         }
+    //     },
+    //     offset: 'bottom-in-view'
+    // });
 
     function cilinder() {
         $('.cilinder-lines svg').attr('viewBox', "0 0 " + $('.cilinder-lines').width() + " " + $('.cilinder-lines').height());
-
+        
         $('.steps__item').each(function (i, e) {
-            var cylinder = $(this).find('.cylinder');
+            var cylinder = $(this).find('.steps__step');
             var spanTop = cylinder.position().top;
             var spanLeft = cylinder.position().left;
             var spanWidth = cylinder.width();
             var spanHeight = cylinder.height();
-            // console.log(cylinder);
+            
 
 
             if ($(this).next().length) {
-                var cylinderNext = $(this).next().find('.cylinder');
+                console.log('NEXT');
+                var cylinderNext = $(this).next().find('.steps__step');
                 var spanTopNext = cylinderNext.position().top;
                 var spanLeftNext = cylinderNext.position().left;
                 var spanWidthNext = cylinderNext.width();
                 var spanHeightNext = cylinderNext.height();
                 // console.log($('.cilinder-lines svg line'));
+        
                 $('.cilinder-lines svg line').eq(i).attr({
                     'x1': spanLeft + (spanWidth / 2),
                     'y1': spanTop + (spanHeight / 2),
@@ -248,6 +269,20 @@ $(document).ready(function () {
         }
     });
 
+
+
+    $('.product__size').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).attr('data-size')
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).attr('data-size', Math.ceil(now));
+            }
+        });
+    });
+
     // services dropdown
     $('.services__inner').on('click', function(){
         $(this).parent().toggleClass('is-open');
@@ -268,7 +303,25 @@ $(document).ready(function () {
 });
 
 
+// function randomInteger(min, max) {
+//     var rand = min - 0.5 + Math.random() * (max - min + 1)
+//     rand = Math.round(rand);
+//     return rand;
+//   }
 
+// var elements = document.querySelectorAll('path');
+// Array.prototype.forEach.call(elements, function(el, i){
+//    var delay = randomInteger(200, 1000);
+//   el.style.transitionDelay = delay + 'ms';
+//   console.log(el.className);
+//   console.log(el.className);
+//   if (el.classList) {
+//     el.classList.add('show');
+//   } else {
+//     el.className += ' ' + 'show';
+//   }
+  
+// });
 
 // navigation_links.click( function(event) {
 //     $.scrollTo(
