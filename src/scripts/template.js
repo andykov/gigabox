@@ -270,18 +270,28 @@ $(document).ready(function () {
     });
 
 
+    var stepItem = $("#price");
 
-    $('.product__size').each(function () {
-        $(this).prop('Counter',0).animate({
-            Counter: $(this).attr('data-size')
-        }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).attr('data-size', Math.ceil(now));
-            }
-        });
+    stepItem.waypoint({
+        handler: function(direction) {
+            $('.product__size').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).attr('data-size')
+                }, {
+                    duration: 1800,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).attr('data-size', Math.ceil(now));
+                    }
+                });
+            });
+            this.destroy();
+        },
+        offset: '60%'
     });
+
+    
+    
 
     // services dropdown
     $('.services__inner').on('click', function(){
