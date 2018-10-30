@@ -282,6 +282,7 @@ $(document).ready(function () {
     stepItem.waypoint({
         handler: function(direction) {
             $('.product__size').each(function () {
+                $(this).addClass('show');
                 $(this).prop('Counter',0).animate({
                     Counter: $(this).attr('data-size')
                 }, {
@@ -296,6 +297,7 @@ $(document).ready(function () {
         },
         offset: '60%'
     });
+
 
     
     
