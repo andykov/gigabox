@@ -9,18 +9,26 @@
         padding-left: 74px;
         font-size: 14px;
         min-height: 57px;
-        padding: 5px 260px 5px 74px;
+        
         margin-bottom: 135px;
+        @include media-breakpoint-up(md) {
+            padding: 5px 260px 5px 74px;
+        }
 
         &:after {
             content: '';
             position: absolute;
+            top: 110%;
             right: 0;
             background: url('../img/svg/arrow-curve-rb.svg') no-repeat;
             background-size: contain;
             max-width: 215px;
             width: 100%;
-            height: 148px;
+            height: 100%;
+            @include media-breakpoint-up(md) {
+                top: auto;
+                height: 148px;
+            }
         }
     }
 

@@ -43,27 +43,20 @@ $(document).ready(function () {
 
 
     // menu
-    // var sections = $('.section');
-    // var navigation_links = $('.menu a');
-    // sections.waypoint({
-    //     handler: function(event, direction) {
-    //         // console.log(this);
-    //         var active_section;
-    //         active_section = $(this);
-    //         // console.log(navigation_links);
-    //         // active_section.attr("id")
-    //         var id = active_section.attr("id");
-    //         if (typeof id !== typeof undefined && id !== false) {
-    //             // console.log(id);
-    //         }
-            
-    //         if (direction === "up") active_section = active_section.prev();
-    //         var active_link = $('.menu a[href="#' + active_section.attr("id") + '"]');
-    //         navigation_links.removeClass("is-active");
-    //         active_link.addClass("is-active");
-    //     },
-    //     offset: '35%'
-    // });
+    var sections = $('.section');
+    var navigation_links = $('.menu a');
+    sections.waypoint({
+        handler: function(event, direction) {
+            // console.log($(this.element).attr('id'));
+            var active_section = $(this.element);
+            var id = active_section.attr("id");
+            if (direction === "up") active_section = active_section.prev();
+            var active_link = $('.menu a[href="#' + active_section.attr("id") + '"]');
+            navigation_links.removeClass("is-active");
+            active_link.addClass("is-active");
+        },
+        offset: '35%'
+    });
 
 
 
@@ -108,7 +101,7 @@ $(document).ready(function () {
         handler: function (direction) {
             $('.regions-desc').each(function(){
                 var h = $(this).attr('data-height');
-                $(this).height(h).find('span').css('opacity', 1);
+                $(this).height($(window).width() >= 992 ? h : (h/1.3)).find('span').css('opacity', 1);
             });
             
 
@@ -160,8 +153,8 @@ $(document).ready(function () {
 
     stepItem.waypoint({
         handler: function(direction) {
-            if (direction === 'down') {
-                $('.btn-menu, .menu__list').addClass('is-active');
+            if (direction === 'down' && $(window).width() >= 1200) {
+                $('.btn-menu, .menu__body').addClass('is-active');
             }
         },
         offset: '20%'
@@ -231,7 +224,7 @@ $(document).ready(function () {
     // menu
     $('.btn-menu').on('click', function () {
         $(this).toggleClass('is-active');
-        $('.menu__list').toggleClass('is-active');
+        $('.menu__body').toggleClass('is-active');
     });
 
     // range price

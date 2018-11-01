@@ -9,12 +9,9 @@ $btn-burger-width: 24px;
     font-size: 12px;
     font-weight: 300;
     padding: 15px 30px 15px 0;
- 
-    &__list {
+
+    &__body {
         padding-left: 10px;
-        margin-bottom: 0;
-        counter-reset: menu;
-        list-style: none;
         transform: translateX(-200px);
         transition: transform 0.2s;
 
@@ -22,35 +19,40 @@ $btn-burger-width: 24px;
             transform: translateX(0);
             transition: transform 0.2s 0.2s;
         }
+    }
+ 
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        counter-reset: menu;
+        list-style: none;
 
         li {
-            &:not(.menu__phone) {
-                a {
-                    &:before {
-                        counter-increment: menu;
-                        content: counter(menu);
-                        display: inline-block;
-                        width: 26px;
-                        height: 29px;
-                        text-align: center;
-                        vertical-align: middle;
-                        line-height: 29px;
-                        margin-right: 8px;
-                    }
+            a {
+                &:before {
+                    counter-increment: menu;
+                    content: counter(menu);
+                    display: inline-block;
+                    width: 26px;
+                    height: 29px;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 29px;
+                    margin-right: 8px;
+                }
 
-                    &:hover {
-                        span {
-                            color: #29ABE2;
-                        }
+                &:hover {
+                    span {
+                        color: #29ABE2;
                     }
-        
-                    &.is-active {
-                        &:before {
-                            background: url('../img/svg/menu_active.svg') no-repeat;
-                        }
-                        span {
-                            color: #29ABE2;
-                        }
+                }
+    
+                &.is-active {
+                    &:before {
+                        background: url('../img/svg/menu_active.svg') no-repeat;
+                    }
+                    span {
+                        color: #29ABE2;
                     }
                 }
             }
@@ -69,10 +71,29 @@ $btn-burger-width: 24px;
         }
     }
 
+    &__contacts {
+        padding-top: 4px;
+    }
+
     &__phone {
+        padding-bottom: 6px;
+        a {
+            display: flex;
+            align-items: center;
+            &:hover {
+                color: #29ABE2;
+            }
+        }
         .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 26px;
             height: 29px;
+            margin-right: 8px;
+        }
+        span {
+            color: #000;
         }
     }
 }
@@ -87,7 +108,7 @@ $btn-burger-width: 24px;
     background: transparent;
     border: 0;
     padding: 0;
-    margin-left: 40px;
+    margin-left: 35px;
 
     &:focus {
         outline: none;

@@ -65,15 +65,22 @@
 
     &__form {
         padding-top: 40px;
-        display: flex;
+        
+        @include media-breakpoint-up(md) {
+            display: flex;
+        }
 
         &-col-left {
-            flex: 1;
-            max-width: 485px;
+            @include media-breakpoint-up(md) {
+                flex: 1;
+                max-width: 485px;
+            }
         }
         &-col-right {
-            flex: 1;
-            max-width: 520px;
+            @include media-breakpoint-up(md) {
+                flex: 1;
+                max-width: 520px;
+            }
         }
 
         &-img {
