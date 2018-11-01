@@ -1,10 +1,16 @@
 .popup {
   padding: 30px;
   border-radius: 4px;
+  max-width: 420px;
 
   &__title {
     font-size: 18px;
     font-weight: 900;
+  }
+
+  &--wide {
+    max-width: 1005px;
+    padding: ((76 / 1680) * 100%) ((70 / 1680) * 100%);
   }
 }
 
