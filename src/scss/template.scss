@@ -11,33 +11,33 @@
 @import "root";
 @import "reboot";
 @import "type";
-@import "images";
-@import "code";
+// @import "images";
+// @import "code";
 @import "grid";
 @import "tables";
 @import "forms";
 @import "buttons";
 @import "transitions";
-@import "dropdown";
+// @import "dropdown";
 @import "button-group";
 @import "input-group";
 @import "custom-forms";
 @import "nav";
-@import "navbar";
-@import "card";
-@import "breadcrumb";
-@import "pagination";
-@import "badge";
-@import "jumbotron";
-@import "alert";
-@import "progress";
-@import "media";
-@import "list-group";
-@import "close";
+// @import "navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+// @import "list-group";
+// @import "close";
 @import "modal";
-@import "tooltip";
-@import "popover";
-@import "carousel";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
 
 // blocks
 @import "blocks/menu";
@@ -654,8 +654,11 @@ body {
 
 .regions {
     position: relative;
-    padding-top: 18%;
+    padding-top: 70%;
     padding-bottom: 11%;
+    @include media-breakpoint-up(md) {
+        padding-top: 18%;
+    }
 
     &__map {
         position: relative;
@@ -690,11 +693,15 @@ body {
 
     &-desc {
         position: absolute;
-        width: 245px;
+        width: 200px;
         padding-left: 18px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 300;
         color: #000;
+        @include media-breakpoint-up(md) {
+            font-size: 14px;
+            width: 245px;
+        }
 
         span {
             opacity: 0;
@@ -1274,12 +1281,20 @@ body {
 .member {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
     font-size: 17px;
-    margin-bottom: 108px;
+    margin-bottom: 16%;
+
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
 
     &__info {
         flex: 1;
-        padding-left: 30px;
+        
+        @include media-breakpoint-up(sm) {
+            padding-left: 30px;
+        }
     }
 
     &__photo {
@@ -1293,6 +1308,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
     }
 
     &__name {
@@ -1391,6 +1407,10 @@ body {
     &__text {
         font-size: 14px;
         padding-bottom: 26px;
+
+        @include media-breakpoint-down(sm) {
+            padding-top: 30px;
+        }
 
         img {
             margin-bottom: 22px;
