@@ -1,0 +1,45 @@
+.video-list {
+    padding-top: 66px;
+
+    &__item {
+        position: relative;
+        display: block;
+        max-width: 196px;
+        width: 100%;
+        margin: 0 auto 13%;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 33%;
+        }
+
+        img {
+            box-shadow: 6px 6px 6px 0 rgba(54, 57, 94, 0.2);
+            border-radius: 9px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            background: url('../img/svg/icon_yt_blue.svg') no-repeat;
+            width: 58px;
+            height: 44px;
+            transition: transform 0.25s;
+        }
+
+        &:hover {
+            &:before {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+    }
+
+    &__text {
+        padding-top: 12px;
+
+        .btn {
+            margin-bottom: 10%;
+        }
+    }
+}

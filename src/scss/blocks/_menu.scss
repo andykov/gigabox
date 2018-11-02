@@ -4,11 +4,14 @@ $btn-burger-width: 24px;
     // background-color: #EFEDEB;
     position: fixed;
     left: 0;
-    top: 10%;
+    top: 0;
     z-index: 10;
     font-size: 12px;
     font-weight: 300;
     padding: 15px 30px 15px 0;
+    @include media-breakpoint-up(md) {
+        top: 10%;
+    }
 
     &__body {
         padding-left: 10px;
@@ -108,7 +111,10 @@ $btn-burger-width: 24px;
     background: transparent;
     border: 0;
     padding: 0;
-    margin-left: 35px;
+    margin-left: 10px;
+    @include media-breakpoint-up(md) {
+        margin-left: 35px;
+    }
 
     &:focus {
         outline: none;

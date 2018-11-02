@@ -41,29 +41,31 @@ $(document).ready(function () {
         offset: '35%'
     });
 
-    var hintsProperty = document.querySelectorAll('.btn-tips-onscroll[data-tippy]');
-    var waypoint = new Waypoint({
-        element: document.querySelector('.property'),
-        handler: function (direction) {
-            var delay = 0;
-            hintsProperty.forEach(function (item, i, arr) {
-                delay = delay + 500;
-                setTimeout(function () {
-                    item._tippy.show();
-                }, delay);
+    if ($(window).width() >= 960) {
+        var hintsProperty = document.querySelectorAll('.btn-tips-onscroll[data-tippy]');
+        var waypoint = new Waypoint({
+            element: document.querySelector('.property'),
+            handler: function (direction) {
+                var delay = 0;
+                hintsProperty.forEach(function (item, i, arr) {
+                    delay = delay + 500;
+                    setTimeout(function () {
+                        item._tippy.show();
+                    }, delay);
 
-            });
-            this.destroy();
-        },
-        offset: 'bottom-in-view'
-    });
+                });
+                this.destroy();
+            },
+            offset: 'bottom-in-view'
+        });
+    }
 
     var waypoint2 = new Waypoint({
         element: document.querySelector('.regions__map'),
         handler: function (direction) {
             $('.regions-desc').each(function(){
                 var h = $(this).attr('data-height');
-                $(this).height($(window).width() >= 992 ? h : (h/1.4)).find('span').css('opacity', 1);
+                $(this).height($(window).width() >= 960 ? h : (h/1.4)).find('span').css('opacity', 1);
             });
             
             this.destroy();

@@ -164,3 +164,37 @@
 		}
 	}
 }
+
+.presentation {
+	position: relative;
+    
+    @include media-breakpoint-up(lg) {
+        padding-left: 200px;
+    }
+}
+.presentation__text {
+	max-width: 400px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 21px;
+	margin-bottom: 15px;
+	position: relative;
+	z-index: 1;
+}
+.presentation__img {
+    display: none;
+    width: 45.5%;
+	position: absolute;
+    left: -12px;
+    bottom: -25%;
+    z-index: 2;
+    
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}
+.presentation__text span {
+	color: #005EA9;
+	font-weight: bold;
+}
+.presentation__img {}

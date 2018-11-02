@@ -1,0 +1,107 @@
+.services {
+    max-width: 1004px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__intro {
+        max-width: 734px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-bottom: 4.3%;
+    }
+
+    &__row {
+        @include make-row();
+    }
+
+    &__item {
+        margin-bottom: 45px;
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+            @include make-col(6);
+        }
+    }
+
+    &__cont {
+        position: relative;
+        
+
+        &.is-open {
+            z-index: 2;
+
+            .services__inner {
+                &:after {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+
+            .services__form {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+        background : linear-gradient(90deg, rgba(18, 122, 203, 1) 0%, rgba(33, 146, 234, 1) 100%);
+        box-shadow: 4px 4px 7px 0 rgba(63,63,63, 0.43);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.2;
+        color: #fff;
+        padding: 37.5px 50px 37.5px 15px;
+        z-index: 1;
+        cursor: pointer;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 32px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            width: 18px;
+            height: 11px;
+            background: url('../img/svg/arrow-small-b_white.svg') no-repeat;
+        }
+
+        span {
+            font-weight: 600;
+            color: #00406B;
+        }
+    }
+
+    &__icon {
+        max-width: 65px;
+        width: 100%;
+        text-align: center;
+        margin-right: 15px;
+    }
+
+    &__form {
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        padding: 30px;
+        margin-top: -10px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s;
+
+        &-title {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+        .form-check {
+            font-size: 14px;
+        }
+    }
+}
