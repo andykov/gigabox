@@ -18,6 +18,10 @@
   border: 0;
   box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2), inset 4px 4px 2px -2px rgba(0, 0, 0, 0.2);
 
+  @include media-breakpoint-down(xs) { 
+    padding-left: $input-padding-x / 2;
+  }
+
   // // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   // @if $enable-rounded {
   //   // Manually use the if/else instead of the mixin to account for iOS override
@@ -215,9 +219,17 @@ textarea.form-control {
 }
 
 .form-check-input {
+  opacity: 0;
+  z-index: 1;
   position: absolute;
   margin-top: $form-check-input-margin-y;
   margin-left: -$form-check-input-gutter;
+
+  &:checked + label.form-check-label {
+    &:before {
+      background: url(../img/svg/check.svg) no-repeat center center / 10px 8px;
+    }
+  }
 
   &:disabled ~ .form-check-label {
     color: $text-muted;
@@ -226,6 +238,16 @@ textarea.form-control {
 
 .form-check-label {
   margin-bottom: 0; // Override default `<label>` bottom margin
+  &:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1.2px solid #999;
+    border-radius: 3px;
+  }
 }
 
 .form-check-inline {
@@ -333,5 +355,21 @@ textarea.form-control {
     .custom-control-label {
       margin-bottom: 0;
     }
+  }
+}
+
+.form-loader {
+  position: relative;
+  font-size: 14px;
+  padding: 20px 0 0 46px;
+
+  &:before {
+    content: '';
+    background: url('../img/svg/loader.svg') no-repeat center center / 100%;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 10px;
+    left: 0;
   }
 }

@@ -112,3 +112,23 @@
       transform: translateY(-100%);
   }
 }
+
+@keyframes btnSpecialPulse {
+    0% {
+      -webkit-transform: scale(.9);
+      transform: scale(.9);
+      opacity: .7
+    }
+  
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1
+    }
+  
+    100% {
+        -webkit-transform: scale(.9);
+        transform: scale(.9);
+        opacity: .7
+    }
+  }

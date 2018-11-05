@@ -73,20 +73,23 @@ $(document).ready(function () {
         offset: '50%'
     });
 
-
-    var stepItem = $(".steps__item");
-    stepItem.waypoint({
-        handler: function(direction) {
-            if (direction === 'down') {
-                console.log($(this.element).index());
-                $(this.element).addClass('show');
-                if ($(this.element).index() >= 1) {
-                    $(this.element).closest('.steps').find('.cilinder-lines svg line').eq($(this.element).index() - 1).addClass('show');
+    if ($(window).width() >= 768) {
+        var stepItem = $(".steps__item");
+        stepItem.waypoint({
+            handler: function(direction) {
+                if (direction === 'down') {
+                    console.log($(this.element).index());
+                    $(this.element).addClass('show');
+                    if ($(this.element).index() >= 1) {
+                        $(this.element).closest('.steps').find('.cilinder-lines svg line').eq($(this.element).index() - 1).addClass('show');
+                    }
                 }
-            }
-        },
-        offset: '80%'
-    });
+            },
+            offset: '80%'
+        });
+    } else {
+        $('.steps__item, .cilinder-lines svg line').addClass('show');
+    }
 
     var stepItem = $("#property");
     stepItem.waypoint({

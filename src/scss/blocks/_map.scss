@@ -10,6 +10,9 @@
         position: relative;
         max-width: 980px;
         margin: 0 auto;
+        @include media-breakpoint-down(xs) { 
+            padding-top: 30px;
+        }
     }
 
     &__info {
@@ -131,9 +134,12 @@
             height: 3px;
             background-color: #000;
             border-radius: 1.2px;
-            margin: 46px auto 0;
+            margin: 26px auto 0;
             box-shadow: 0 5px 30px;
             opacity: 0.7;
+            @include media-breakpoint-up(md) {
+                margin: 46px auto 0;
+            }
         }
     }
 }

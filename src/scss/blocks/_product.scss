@@ -48,10 +48,8 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        // transform: skewX(63deg) skewY(3deg);
-            // transform: perspective(500px) rotateX(45deg) skewX(15deg) rotateY(0deg) rotateZ(-45deg);
-            transform: perspective(700px) rotateX(50deg) rotateY(8deg) skewY(0deg) skewX(-45deg) rotateZ(-90deg);
-            transform-origin: center center 0px;
+        transform: perspective(700px) rotateX(50deg) rotateY(8deg) skewY(0deg) skewX(-45deg) rotateZ(-90deg);
+        transform-origin: center center 0px;
 
             span {
                 display: block;
@@ -125,45 +123,6 @@
         }
     }
 
-    // &__size {
-    //     position: absolute;
-    //     width: 20%;
-    //     border-top: 2px dashed #999;
-    //     border-bottom: 2px dashed #999;
-    //     bottom: -3px;
-    //     transform: skewX(-63deg) skewY(3deg);
-
-    //     &--20f {
-    //         height: 34%;
-    //         left: 71%;
-    //         svg {
-    //             width: 100%;
-    //         }
-    //     }
-
-    //     &--40f {
-    //         height: 43%;
-    //         left: 71%;
-    //     }
-
-    //     &:after {
-    //         content: attr(data-size)' мм.';
-    //         display: inline-block;
-    //         transform: rotate(0) rotateZ(-90deg) rotateY(60deg);
-    //         left: 5%;
-    //         bottom: 30%;
-    //         width: 200%;
-    //         height: 22px;
-    //         transform: skewX(63deg) skewY(3deg) rotate(-30deg);
-    //         position: absolute;
-    //         font-weight: 500;
-    //     }
-
-    //     svg {
-    //         transform: skewX(63deg) skewY(3deg) rotate(-30deg);
-    //     }
-    // }
-
     &__cont {
         padding-top: 70px;
         height: 100%;
@@ -192,7 +151,10 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        margin-left: 40px;
+        margin-left: 15px;
+        @include media-breakpoint-up(sm) { 
+            margin-left: 40px;
+        }
 
         li {
             padding: 4px 0;

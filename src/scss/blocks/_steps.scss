@@ -27,23 +27,15 @@
             align-self: flex-end;
 
             .steps__text {
-                padding-left: 84px;
                 position: relative;
 
-                // &:before {
-                //     content: '';
-                //     position: absolute;
-                //     left: 0;
-                //     width: 3px;
-                //     height: 3px;
-                //     background-color: #000;
-                // }
-
+                @include media-breakpoint-up(md) {
+                    padding-left: 84px;
+                }
             }
         }
 
         .cylinder {
-            // flex: 1;
             flex-basis: 95px;
         }
 
@@ -59,7 +51,6 @@
                 visibility: visible;
                 span {
                     height: 100%;
-                    // transition: height ;
                     animation: 0.65s cilheight;
                 }
 
@@ -95,7 +86,6 @@
         display: inline-block;
         width: 100%;
         font-size: 14px;
-        // padding-left: 84px;
     }
 
     &__step {
@@ -180,13 +170,16 @@
         left: 0;
         bottom: 0;
         width: 95px;
-        height: 0;
+        height: 100%;
         padding-top: 56px;
         border-radius: 47.5px/28px;
         background-color: rgba(0, 160, 160, 0.5);
         background: linear-gradient(90deg, #007BFF 0%, #002794 100%);
         transition: 0.3s linear;
-        height: 0;
+        
+        @include media-breakpoint-up(md) {
+            height: 0;
+        }
         
         
         &:before {

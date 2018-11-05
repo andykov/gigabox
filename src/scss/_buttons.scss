@@ -31,7 +31,6 @@
 
   @include media-breakpoint-up(md) {
     font-size: 18px;
-    
     min-height: 56px;
   }
 
@@ -49,24 +48,26 @@
     }
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-top: 10px;
-    width: 100%;
-    height: 20px;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 70%);
-    opacity: 0.9;
-    transform: translate3d(-50%, 0, 0px);
-    transition: transform 0.15s;
-    filter: blur(5px);
-  }
-
-  &:hover {
+  &:not(.btn--noshadow) {
     &:before {
-      transform: translate3d(-50%, -14px, 0px);
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-top: 10px;
+      width: 100%;
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 70%);
+      opacity: 0.9;
+      transform: translate3d(-50%, 0, 0px);
+      transition: transform 0.15s;
+      filter: blur(5px);
+    }
+  
+    &:hover {
+      &:before {
+        transform: translate3d(-50%, -14px, 0px);
+      }
     }
   }
 
@@ -212,6 +213,11 @@
   box-shadow: -13px 14px 13px 0 rgba(0, 0, 0, 0.3);
   border-radius: 100%;
   color: #fff;
+  z-index: 1;
+
+  .ripple {
+    width: 250%;
+  }
 
   &:after {
     content: '';
@@ -455,7 +461,7 @@ input[type="button"] {
     height: 44px;
     @include media-breakpoint-up(md) {
       width: 74px;
-    height: 74px;
+      height: 74px;
     }
   }
 
@@ -478,6 +484,52 @@ input[type="button"] {
 	text-decoration: none;
 	font-weight: 300;
   color : #333;
+
+  &--price {
+    padding: 6px;
+    font-size: 18px;
+    
+    .btn-special__label {
+      white-space: nowrap;
+    }
+  }
+
+  &--compare {
+    font-size: 12px;
+    @include media-breakpoint-up(sm) {
+      font-size: 14px;
+    }
+
+    .btn-special__label {
+      padding-left: 25px;
+      
+    }
+
+    .icon {
+      min-width: 65px;
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  &--pulse {
+    animation-name: btnSpecialPulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  &__label {
+    padding: 10px 16px;
+  }
+
+  .icon {
+    box-shadow: 4px 4px 4px rgba(0,0,0, 0.3);
+    text-align: center;
+
+    img {
+      vertical-align: middle;
+    }
+  }
   
   &:hover {
     transform: translateY(5px);
@@ -485,55 +537,4 @@ input[type="button"] {
     color : #333;
   }
 }
-.btn-special--price {
-	padding: 6px;
-	font-size: 18px;
-}
-.btn-special--compare {
-	font-size: 14px;
-}
-.btn-special__label {
-	padding: 10px 16px;
-}
-.btn-special--compare .icon {
-	width: 65px;
-	height: 65px;
-}
-.btn-special--compare .btn-special__label {
-	padding-left: 25px;
-}
-.btn-special .icon {
-	box-shadow: 4px 4px 4px rgba(0,0,0, 0.3);
-	text-align: center;
-}
-.btn-special .icon img {
-	vertical-align: middle;
-}
 
-.btn-special {
-  &--pulse {
-    animation-name: btnSpecialPulse;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
-}
-
-@keyframes btnSpecialPulse {
-  0% {
-    -webkit-transform: scale(.9);
-    transform: scale(.9);
-    opacity: .7
-  }
-
-  50% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      opacity: 1
-  }
-
-  100% {
-      -webkit-transform: scale(.9);
-      transform: scale(.9);
-      opacity: .7
-  }
-}

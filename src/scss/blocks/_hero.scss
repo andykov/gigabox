@@ -1,5 +1,8 @@
 .hero {
-	padding: 58px 0;
+	padding: 15px 0;
+	@include media-breakpoint-up(md) {
+		padding: 58px 0;
+	}
 
 	&__heading {
 		padding-bottom: 35px;
@@ -49,8 +52,10 @@
 		}
 	
 		.phone {
+			margin-top: 15px;
+			margin-bottom: 20px;
 			@include media-breakpoint-up(md) {
-				margin-left: ((70 / 1005) * 100%);
+				margin: 0 0 0 ((70 / 1005) * 100%);
 			}
 		}
 	}
@@ -81,7 +86,7 @@
 				@include media-breakpoint-down(xs) {
 					margin-bottom: 10px;
 				}
-				
+
 				@include media-breakpoint-up(sm) {
 					position: absolute;
 					left: 100%;

@@ -1,7 +1,7 @@
 $btn-burger-width: 24px;
 
 .menu {
-    // background-color: #EFEDEB;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -10,6 +10,7 @@ $btn-burger-width: 24px;
     font-weight: 300;
     padding: 15px 30px 15px 0;
     @include media-breakpoint-up(md) {
+        display: block;
         top: 10%;
     }
 

@@ -8,12 +8,16 @@
     font-weight: 900;
   }
 
+  &__subtitle {
+    font-size: 14px;
+  }
+
   &--wide {
     max-width: 1005px;
-    padding: ((76 / 1680) * 100%) ((70 / 1680) * 100%);
+    padding: 30px;
+    @include media-breakpoint-up(lg) {
+      padding: ((70 / 1680) * 100%) ((70 / 1680) * 100%) ((46 / 1680) * 100%) ((70 / 1680) * 100%);
+    }
+    
   }
-}
-
-@include media-breakpoint-up(lg) {
-
 }
