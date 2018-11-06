@@ -162,8 +162,10 @@ $(document).ready(function () {
             $('.rangeslider__handle').append('<output>' + currentVal + 'руб.</output>');
         },
         onSlide: function (position, value) {
+            var s = Number(100000);
             value = String(value).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ');
             $('output').text(value + 'руб.');
+            console.log((+value - s));
         }
     });
 

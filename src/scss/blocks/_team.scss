@@ -45,6 +45,11 @@
     &__department {
         padding: 0;
         margin: 0;
+
+        span {
+            display: block;
+            flex: 1;
+        }
         
         li {
             display: flex;
@@ -55,7 +60,7 @@
     &__staff {
         display: inline-flex;
         flex-wrap: wrap;
-        align-items: center;
+        // align-items: center;
         flex: 1;
 
         img {
