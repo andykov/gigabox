@@ -4021,6 +4021,9 @@ input[type="button"].btn-block {
     @media (min-width: 992px) {
       .hero__heading {
         padding-left: 67.5px; } }
+  .hero__title {
+    color: #005EA9;
+    margin-bottom: 0; }
   @media (max-width: 1199.98px) {
     .hero__subtitle {
       font-size: 1.375rem; } }
@@ -4688,7 +4691,7 @@ input[type="button"].btn-block {
               filter: blur(2px); }
     .product__img .btn-stock {
       position: absolute;
-      left: 47%;
+      left: 40%;
       top: -32px; }
   .product__size {
     position: absolute;
