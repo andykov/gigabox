@@ -189,21 +189,15 @@ body {
             padding-top: 23px;
             max-width: 350px;
         }
-        .field-phone-code {
-            max-width: 84px;
-            .form-control {
-                padding-left: 30px;
-                padding-right: 10px;
-            }
-        }
         .btn {
             margin-top: 40px;
         }
     }
 
     &__img {
-        
+        display: none;
         @include media-breakpoint-up(md) {
+            display: block;
             position: absolute;
             top: -123px;
         }
@@ -234,7 +228,7 @@ body {
     }
     &--property {
         position: relative;
-        padding: 6.8% 0 8.7%;
+        padding: 0 0 8.7%;
     }
     &--compare {
         padding-bottom: 30px;

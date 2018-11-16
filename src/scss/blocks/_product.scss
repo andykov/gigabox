@@ -83,6 +83,18 @@
                 }
             }
 
+        &--10f {
+            width: 38%;
+            right: -48px;
+            bottom: -11px;
+
+            @include media-breakpoint-down(sm) {
+                height: 50px;
+                bottom: -2px;
+                right: -25px;
+            }
+        }
+
         &--20f {
             width: 42%;
             right: -48px;

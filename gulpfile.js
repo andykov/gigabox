@@ -59,7 +59,7 @@ var PATH = {
     WATCH: {
         HTML: ['src/html/**/*.html'],
         SCSS: ['src/scss/**/*.scss'],
-        JS: ['src/scripts/template.js', 'src/scripts/pages/*.js'],
+        JS: ['src/scripts/**/*.js'],
         IMG: ['src/images/**/*.{jpg,jpeg,gif,png}'],
         SVG: ['src/images/svg/*.svg']
     }
@@ -108,11 +108,35 @@ gulp.task('scss', function () {
 // });
 gulp.task('html', function () {
     console.log('---------- Обработка HTML');
-	return gulp.src(PATH.SRC.HTML).on('error', console.log)
+	return gulp.src([
+        'src/html/*.html',
+        'src/handler.php'
+    ]).on('error', console.log)
         .pipe(gulp.dest(PATH.BUILD.HTML))
         .pipe(browserSync.stream({once: true}));
 });
+gulp.task('mailer', function () {
+    console.log('---------- Перенос favicon');
+    return gulp.src([
+        'src/mailer/**/*.*',
+        'src/mailer/*.*',
+    ],  {base: 'src/mailer/'}).on('error', console.log)
+        .pipe(gulp.dest('build/mailer'))
+        .pipe(browserSync.stream({once: true}));
+});
 
+/*--------------------------------------------------------------
+# Favicon
+--------------------------------------------------------------*/
+gulp.task('favicon', function () {
+    console.log('---------- Перенос PHPmailer');
+    return gulp.src([
+        'src/favicon/**/*.*',
+        'src/favicon/*.*',
+    ],  {base: 'src/'}).on('error', console.log)
+        .pipe(gulp.dest('build'))
+        .pipe(browserSync.stream({once: true}));
+});
 
 /*--------------------------------------------------------------
 # JS
@@ -255,7 +279,7 @@ gulp.task('clean', function () {
 # All task
 --------------------------------------------------------------*/
 gulp.task('build', gulp.series('clean',
-    gulp.parallel('scss', 'html', 'js', 'img', 'svg', 'fonts'))
+    gulp.parallel('scss', 'html', 'mailer', 'js', 'img', 'svg', 'fonts', 'favicon'))
 );
 
 
@@ -273,6 +297,7 @@ gulp.task('serve', function () {
     //     open: 'external'
     // });
     gulp.watch(PATH.WATCH.HTML, gulp.series('html'));
+    gulp.watch('src/**/*.php', gulp.series('mailer'));
     gulp.watch(PATH.WATCH.SCSS, gulp.series('scss'));
     gulp.watch(PATH.WATCH.JS, gulp.series('js'));
     gulp.watch(PATH.WATCH.IMG, gulp.series('img'));

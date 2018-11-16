@@ -373,3 +373,11 @@ textarea.form-control {
     left: 0;
   }
 }
+
+.field-phone-code {
+  max-width: 84px;
+  .form-control {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+}

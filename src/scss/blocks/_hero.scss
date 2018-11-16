@@ -81,8 +81,7 @@
 			}
 
 			span {
-				display: block;
-				white-space: nowrap;
+				display: none;
 				
 				@include media-breakpoint-down(xs) {
 					margin-bottom: 10px;
@@ -96,15 +95,22 @@
 
 				}
 
-				&:before {
-					content: '';
-					position: absolute;
-					bottom: 100%;
-					right: 60%;
-					background: url(../img/svg/arrow-curve-l.svg) no-repeat center center / contain;
-					width: 99px;
-					height: 41px;
+				@include media-breakpoint-up(lg) {
+					display: block;
+					white-space: nowrap;
+
+					&:before {
+						content: '';
+						position: absolute;
+						bottom: 100%;
+						right: 60%;
+						background: url(../img/svg/arrow-curve-l.svg) no-repeat center center / contain;
+						width: 99px;
+						height: 41px;
+					}
 				}
+
+
 			}
 		}
 	}
@@ -122,24 +128,28 @@
 		margin-top: 10px;
 
 		.guarantee {
-			display: inline-block;
-			position: absolute;
-			right: 3%;
-			top: 2%;
-			color: #666;
-			font-size: 14px;
+			display: none;
 
-			&:before {
-				content: '';
+			@include media-breakpoint-up(lg) {
+				display: inline-block;
 				position: absolute;
-				display: block;
-				top: 5px;
-				right: 100%;
-				margin-right: 4px;
-				width: 100%;
-				background: url(../img/svg/arrow-curve-lb.svg) no-repeat;
-				height: 18px;
-				width: 46px;
+				right: 3%;
+				top: 2%;
+				color: #666;
+				font-size: 14px;
+
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					top: 5px;
+					right: 100%;
+					margin-right: 4px;
+					width: 100%;
+					background: url(../img/svg/arrow-curve-lb.svg) no-repeat;
+					height: 18px;
+					width: 46px;
+				}
 			}
 		}
 

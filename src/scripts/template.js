@@ -24,7 +24,14 @@ $(document).ready(function () {
     var maxHeight = Math.max.apply(null, servicesHeights);
     $('.services__inner').height(maxHeight);
 
-
+    // Показ акции при попытке закрыть страницу
+    $(document).mouseleave(function(e){
+        if (e.clientY < 10) {
+            $.fancybox.open( $('#stock'), {
+                touch: false
+            });
+        }
+    });
 
     // menu
     var sections = $('.section');

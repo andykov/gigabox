@@ -2119,6 +2119,12 @@ textarea.form-control {
     top: 10px;
     left: 0; }
 
+.field-phone-code {
+  max-width: 84px; }
+  .field-phone-code .form-control {
+    padding-left: 30px;
+    padding-right: 10px; }
+
 .btn {
   position: relative;
   display: -webkit-inline-box;
@@ -2825,8 +2831,6 @@ input[type="button"].btn-block {
   height: 20px;
   font-size: 14px;
   color: #005EA9;
-  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.58);
-          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.58);
   -webkit-border-radius: 100%;
           border-radius: 100%;
   -webkit-transform: scale(1);
@@ -2850,6 +2854,7 @@ input[type="button"].btn-block {
   .btn-tips:hover span {
     text-decoration: underline; }
   .btn-tips span {
+    display: none;
     position: absolute;
     bottom: -100%;
     left: 50%;
@@ -2863,6 +2868,7 @@ input[type="button"].btn-block {
             transform: translateX(-50%); }
     @media (min-width: 992px) {
       .btn-tips span {
+        display: block;
         -webkit-transform: translateX(0);
             -ms-transform: translateX(0);
                 transform: translateX(0);
@@ -4080,8 +4086,7 @@ input[type="button"].btn-block {
       .hero__col-first .social {
         left: 9%; } }
     .hero__col-first .social span {
-      display: block;
-      white-space: nowrap; }
+      display: none; }
       @media (max-width: 575.98px) {
         .hero__col-first .social span {
           margin-bottom: 10px; } }
@@ -4091,14 +4096,18 @@ input[type="button"].btn-block {
           left: 100%;
           bottom: -16px;
           margin-left: 33%; } }
-      .hero__col-first .social span:before {
-        content: '';
-        position: absolute;
-        bottom: 100%;
-        right: 60%;
-        background: url(../img/svg/arrow-curve-l.svg) no-repeat center center/contain;
-        width: 99px;
-        height: 41px; }
+      @media (min-width: 992px) {
+        .hero__col-first .social span {
+          display: block;
+          white-space: nowrap; }
+          .hero__col-first .social span:before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            right: 60%;
+            background: url(../img/svg/arrow-curve-l.svg) no-repeat center center/contain;
+            width: 99px;
+            height: 41px; } }
   @media (min-width: 768px) {
     .hero__col-two {
       width: 48.68421%; } }
@@ -4110,23 +4119,26 @@ input[type="button"].btn-block {
     position: relative;
     margin-top: 10px; }
     .hero__img .guarantee {
-      display: inline-block;
-      position: absolute;
-      right: 3%;
-      top: 2%;
-      color: #666;
-      font-size: 14px; }
-      .hero__img .guarantee:before {
-        content: '';
-        position: absolute;
-        display: block;
-        top: 5px;
-        right: 100%;
-        margin-right: 4px;
-        width: 100%;
-        background: url(../img/svg/arrow-curve-lb.svg) no-repeat;
-        height: 18px;
-        width: 46px; }
+      display: none; }
+      @media (min-width: 992px) {
+        .hero__img .guarantee {
+          display: inline-block;
+          position: absolute;
+          right: 3%;
+          top: 2%;
+          color: #666;
+          font-size: 14px; }
+          .hero__img .guarantee:before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 5px;
+            right: 100%;
+            margin-right: 4px;
+            width: 100%;
+            background: url(../img/svg/arrow-curve-lb.svg) no-repeat;
+            height: 18px;
+            width: 46px; } }
     .hero__img:before {
       content: '';
       position: absolute;
@@ -4243,38 +4255,40 @@ input[type="button"].btn-block {
     display: block;
     padding-bottom: 100%; }
 
-.property__img {
-  text-align: center;
-  position: relative; }
-  @media (min-width: 768px) {
-    .property__img img {
-      margin-left: 50px; } }
-  .property__img .btn-tips {
-    position: absolute; }
-    .property__img .btn-tips.tips-1 {
-      top: 55%;
-      left: 5%; }
-    .property__img .btn-tips.tips-2 {
-      left: 11%;
-      top: 32%; }
-    .property__img .btn-tips.tips-3 {
-      left: 35.9%;
-      top: 58%; }
-    .property__img .btn-tips.tips-4 {
-      left: 51%;
-      top: 30%; }
-    .property__img .btn-tips.tips-5 {
-      left: 71%;
-      top: 9%; }
-    .property__img .btn-tips.tips-6 {
-      top: 10%;
-      right: 9%; }
-    .property__img .btn-tips.tips-7 {
-      left: 72.4%;
-      top: 38%; }
-    .property__img .btn-tips.tips-8 {
-      left: 70.4%;
-      top: 59%; }
+.property {
+  margin-top: 6.8%; }
+  .property__img {
+    text-align: center;
+    position: relative; }
+    @media (min-width: 768px) {
+      .property__img img {
+        margin-left: 50px; } }
+    .property__img .btn-tips {
+      position: absolute; }
+      .property__img .btn-tips.tips-1 {
+        top: 55%;
+        left: 5%; }
+      .property__img .btn-tips.tips-2 {
+        left: 11%;
+        top: 32%; }
+      .property__img .btn-tips.tips-3 {
+        left: 35.9%;
+        top: 58%; }
+      .property__img .btn-tips.tips-4 {
+        left: 51%;
+        top: 30%; }
+      .property__img .btn-tips.tips-5 {
+        left: 71%;
+        top: 9%; }
+      .property__img .btn-tips.tips-6 {
+        top: 10%;
+        right: 9%; }
+      .property__img .btn-tips.tips-7 {
+        left: 72.4%;
+        top: 38%; }
+      .property__img .btn-tips.tips-8 {
+        left: 70.4%;
+        top: 59%; }
 
 .compare {
   max-width: 926px;
@@ -4289,22 +4303,22 @@ input[type="button"].btn-block {
     margin-bottom: 135px; }
     @media (min-width: 768px) {
       .compare-tips {
-        padding: 5px 260px 5px 74px; } }
-    .compare-tips:after {
-      content: '';
-      position: absolute;
-      top: 110%;
-      right: 0;
-      background: url("../img/svg/arrow-curve-rb.svg") no-repeat;
-      -webkit-background-size: contain;
-              background-size: contain;
-      max-width: 215px;
-      width: 100%;
-      height: 100%; }
-      @media (min-width: 768px) {
+        padding: 5px 260px 5px 74px; }
         .compare-tips:after {
-          top: auto;
-          height: 148px; } }
+          content: '';
+          position: absolute;
+          top: 110%;
+          right: 0;
+          background: url("../img/svg/arrow-curve-rb.svg") no-repeat;
+          -webkit-background-size: contain;
+                  background-size: contain;
+          max-width: 215px;
+          width: 100%;
+          height: 100%; } }
+    @media (min-width: 768px) and (min-width: 768px) {
+      .compare-tips:after {
+        top: auto;
+        height: 148px; } }
   @media (min-width: 576px) {
     .compare__head {
       display: -webkit-box;
@@ -4749,6 +4763,15 @@ input[type="button"].btn-block {
                 transform: rotate(-38deg) translateY(-50%);
         top: 50%;
         left: 7px; }
+    .product__size--10f {
+      width: 38%;
+      right: -48px;
+      bottom: -11px; }
+      @media (max-width: 767.98px) {
+        .product__size--10f {
+          height: 50px;
+          bottom: -2px;
+          right: -25px; } }
     .product__size--20f {
       width: 42%;
       right: -48px;
@@ -5246,10 +5269,10 @@ input[type="button"].btn-block {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -8487,19 +8510,16 @@ body {
   padding-top: 23px;
   max-width: 350px; }
 
-.request__form .field-phone-code {
-  max-width: 84px; }
-  .request__form .field-phone-code .form-control {
-    padding-left: 30px;
-    padding-right: 10px; }
-
 .request__form .btn {
   margin-top: 40px; }
 
-@media (min-width: 768px) {
-  .request__img {
-    position: absolute;
-    top: -123px; } }
+.request__img {
+  display: none; }
+  @media (min-width: 768px) {
+    .request__img {
+      display: block;
+      position: absolute;
+      top: -123px; } }
 
 .section--hero {
   padding-bottom: 10%; }
@@ -8520,7 +8540,7 @@ body {
 
 .section--property {
   position: relative;
-  padding: 6.8% 0 8.7%; }
+  padding: 0 0 8.7%; }
 
 .section--compare {
   padding-bottom: 30px;
