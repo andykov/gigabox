@@ -4069,12 +4069,25 @@ input[type="button"].btn-block {
         width: 50%; } }
     .hero__top .price {
       margin-right: 66px; }
+    @media (max-width: 767.98px) {
+      .hero__top .btn-special--price {
+        float: left; } }
+    @media (max-width: 767.98px) {
+      .hero__top .logo {
+        float: right;
+        padding: 10px; } }
+    @media (min-width: 768px) {
+      .hero__top .logo {
+        display: none; } }
     .hero__top .phone {
       margin-top: 15px;
       margin-bottom: 20px; }
       @media (min-width: 768px) {
         .hero__top .phone {
           margin: 0 0 0 6.96517%; } }
+      @media (max-width: 767.98px) {
+        .hero__top .phone {
+          clear: both; } }
   @media (min-width: 768px) {
     .hero__middle {
       display: -webkit-box;
@@ -4125,6 +4138,9 @@ input[type="button"].btn-block {
             background-size: contain;
     position: relative;
     margin-top: 10px; }
+    @media (min-width: 576px) {
+      .hero__img {
+        min-height: 147px; } }
     .hero__img .guarantee {
       display: none; }
       @media (min-width: 992px) {
@@ -8505,10 +8521,10 @@ body {
   padding: 20px 20px 8px; }
   @media (min-width: 768px) {
     .form-presentation {
-      padding: 46px 55px; } }
+      padding: 46px 40px; } }
   @media (min-width: 768px) {
     .form-presentation .form-control {
-      max-width: 196px; } }
+      max-width: 190px; } }
 
 .input-range {
   text-align: center;

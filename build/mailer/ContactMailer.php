@@ -54,7 +54,7 @@ class ContactMailer
         // Логин или E-mail целиком
         $mailer->Username = self::$emailFrom;
         // Пароль от почтового ящика
-        $mailer->Password = 'yerdna89gonze';
+        $mailer->Password = 'industry1';
         // Протокол соединения
         $mailer->SMTPSecure = 'ssl';
         // Порт для исходящаей почты

@@ -158,7 +158,12 @@ $(document).ready(function () {
     });
 
     // range price
+    if ($(window).width() < 768) {
+        $('input[type="range"]').val('16500000');
+    }
+
     $('.input-range output').text($('.input-range input[type="range"]').val());
+
 
     $('input[type="range"]').rangeslider({
         polyfill: false,

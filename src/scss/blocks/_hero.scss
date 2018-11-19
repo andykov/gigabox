@@ -51,12 +51,31 @@
 		.price {
 			margin-right: 66px;
 		}
+
+		.btn-special--price {
+			@include media-breakpoint-down(sm) {
+				float: left;
+			}
+		}
+
+		.logo {
+			@include media-breakpoint-down(sm) {
+				float: right;
+				padding: 10px;
+			}
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
 	
 		.phone {
 			margin-top: 15px;
 			margin-bottom: 20px;
 			@include media-breakpoint-up(md) {
 				margin: 0 0 0 ((70 / 1005) * 100%);
+			}
+			@include media-breakpoint-down(sm) {
+				clear: both;
 			}
 		}
 	}
@@ -126,6 +145,10 @@
 		background-size: contain;
 		position: relative;
 		margin-top: 10px;
+
+		@include media-breakpoint-up(sm) {
+			min-height: 147px;
+		}
 
 		.guarantee {
 			display: none;
