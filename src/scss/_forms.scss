@@ -359,6 +359,7 @@ textarea.form-control {
 }
 
 .form-loader {
+  display: none;
   position: relative;
   font-size: 14px;
   padding: 20px 0 0 46px;
@@ -379,5 +380,13 @@ textarea.form-control {
   .form-control {
     padding-left: 30px;
     padding-right: 10px;
+  }
+}
+
+.form-error {
+  display: none;
+  &__text {
+    font-weight: 500;
+    color: #dc3545;
   }
 }

@@ -16,12 +16,12 @@ class ContactMailer
      * E-mail отправителя
      * @var string
      */
-    private static $emailFrom = 'andikov89@yandex.ru';
+    private static $emailFrom = 'gigabox@1ghs.ru';
     /**
      * E-mail получателя
      * @var string
      */
-    private static $emailTo = 'abb.name@gmail.com';
+    private static $emailTo = 'industry@1ghs.ru';
 
     /**
      * Отправляет письмо, если письмо отправлено,
@@ -63,7 +63,7 @@ class ContactMailer
         // Устанавливает кодировку
         $mailer->CharSet = 'UTF-8';
         // Устанавливает E-mail и имя отправителя
-        $mailer->setFrom(self::$emailFrom, $name . ': gigabox.ru');
+        $mailer->setFrom(self::$emailFrom, $name . ': gigabox.com');
         // Добавляет E-mail получателя
         $mailer->addAddress(self::$emailTo);
         // Настройка HTML-формата

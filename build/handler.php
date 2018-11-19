@@ -31,20 +31,30 @@ if (!Validator::isValidPhone($phone)) {
 }
 
 if (!empty($download)) {
-    $fileLink = 'favicon/' . $download;
+    $filePath = 'docs/' . $download;
+    $fileHave = false;
+    $fileError = '';
+
+    if (file_exists($filePath)) {
+        $fileHave = true; // Файл существует
+    } else {
+        $fileError = 'Файл не найден';
+    }
 } else {
-    $fileLink = false;
+    $filePath = false;
 }
 
 if (ContactMailer::send($name, $phone, $email, $budget, $formSubject)) {
     $reply = [
         'send'=> true,
         'message' => htmlspecialchars($name) . ', ваше сообщение успешно отправлено.',
-        'file' => $fileLink
+        'file' => $filePath,
+        'file_have' => $fileHave,
+        'file_error' => $fileError
     ];
     echo json_encode($reply);
 } else {
-	echo 'Произошла ошибка! Не удалось отправить сообщение.';
+    echo 'Произошла ошибка! Не удалось отправить сообщение.';
 }
 exit;
 

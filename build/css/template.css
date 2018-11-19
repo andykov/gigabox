@@ -2107,6 +2107,7 @@ textarea.form-control {
       margin-bottom: 0; } }
 
 .form-loader {
+  display: none;
   position: relative;
   font-size: 14px;
   padding: 20px 0 0 46px; }
@@ -2124,6 +2125,12 @@ textarea.form-control {
   .field-phone-code .form-control {
     padding-left: 30px;
     padding-right: 10px; }
+
+.form-error {
+  display: none; }
+  .form-error__text {
+    font-weight: 500;
+    color: #dc3545; }
 
 .btn {
   position: relative;
@@ -4625,7 +4632,7 @@ input[type="button"].btn-block {
     .regions-desc--two {
       border-right: 1px dashed #000;
       bottom: 54.4%;
-      right: 7%;
+      right: 6.5%;
       -webkit-transition: height 1.2s ease-in-out;
       -o-transition: height 1.2s ease-in-out;
       transition: height 1.2s ease-in-out; }
@@ -4663,6 +4670,12 @@ input[type="button"].btn-block {
     @media (min-width: 768px) {
       .markers__item:before {
         margin: 46px auto 0; } }
+  .markers__item--logo {
+    background: url("../img/svg/marker-logo.svg") no-repeat center top;
+    width: 22px;
+    height: 22px; }
+    .markers__item--logo:before {
+      content: none; }
 
 .product {
   padding-bottom: 26%;
@@ -5217,7 +5230,6 @@ input[type="button"].btn-block {
     @media (min-width: 768px) {
       .business__form form .field-phone,
       .business__form form .field-city {
-        max-width: 196px;
         float: right; } }
 
 .video-list {

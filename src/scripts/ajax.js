@@ -40,15 +40,19 @@ $( document ).ready(function() {
             },
             success: function(result) {
                 result = JSON.parse(result);
-                var linkDownload = document.createElement('a');
-                linkDownload.setAttribute('href', result.file);
-                linkDownload.setAttribute('download','download');
-                linkDownload.click();
-                loader.fadeOut(300, function() {
-                    // answer.text(result);
-                });
+
+                loader.fadeOut();
+
                 form.find('input').not('[name="clientPhoneCode"], [type="hidden"]').val('');
                 button.attr('disabled', false);
+                if (result.file_have === true) {
+                    var linkDownload = document.createElement('a');
+                    linkDownload.setAttribute('href', result.file);
+                    linkDownload.setAttribute('download', form.find('input[name="download"]').val());
+                    linkDownload.click();
+                } else if (result.file_error.length > 0) {
+                    form.find('.form-error').fadeIn().find('.form-error__text').text(result.file_error);
+                }
             },
             error: function() {
                 console.log('ajax_error');
