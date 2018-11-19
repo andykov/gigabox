@@ -1,9 +1,11 @@
 .product {
+    position: relative;
     padding-bottom: 26%;
     text-align: center;
     height: 100%;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 
     &__img {
         align-self: center;
@@ -15,6 +17,11 @@
             img {
                 max-width: 220px;
             }
+        }
+
+        img {
+            position: relative;
+            z-index: 1;
         }
 
         &:before {
@@ -39,8 +46,7 @@
 
     &__size {
         position: absolute;
-        
-        display: inline-block;
+        z-index: 1;
         width: 160px;
         height: 90px;
         border-left: 2px dashed;
