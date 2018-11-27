@@ -41,6 +41,7 @@ $(document).ready(function () {
             if (e.clientY < 0) {
 
                 if ($('#stock').length) {
+                    $.fancybox.close();
                     $.fancybox.open({
                         src  : '#stock',
                         type : 'inline',
